@@ -106,7 +106,9 @@ function media_home($class="", $max=3){
 
 function neatline_home(){
     $neatline = get_theme_option('neatline_home');
-    return $neatline;
+    if (!empty($neatline)){
+        return '<iframe src="'.$neatline.'" seamless="seamless" scrolling="no" frameborder = "0" id = "neatline_iframe_home"></iframe>';
+    } 
 }
 
 ?>

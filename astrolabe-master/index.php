@@ -3,7 +3,9 @@
 <div id = "n_wrap">
     <div id = "n_content">
         <div id = "n_map_container">
-            <img src = "https://i.imgur.com/DjfDDki.png" id = "n_map">
+            <div id = "neatline_home">
+                <?php echo neatline_home(); ?>
+            </div>
         </div>
         <?php if ($homepageText = get_theme_option('about')): ?>
         <div id="homepage-text">
