@@ -111,4 +111,54 @@ function neatline_home(){
     } 
 }
 
+
+function exhibit_img_1(){
+	return '<img src="'.get_theme_option('ex_img_1').'" id ="exhibit1" class = "n_image"/>';
+}
+
+function exhibit_img_2(){
+	return '<img src="'.get_theme_option('ex_img_2').'" id ="exhibit2" class = "n_image"/>';
+}
+
+
+function exhibit_img_3(){
+	return '<img src="'.get_theme_option('ex_img_3').'" id ="exhibit3" class = "n_image"/>';
+}
+
+function exhibit_link_1(){
+    return '<a href ="'.get_theme_option('ex_link_1').'">';
+}
+
+function exhibit_title_1(){
+    return '<h4>'.get_theme_option('ex_title_1').'</h4>';
+}
+
+function build_exhibit_1(){
+    return exhibit_link_1().exhibit_img_1().'</a><div class = "descr" id = "exhibit_title_1">'.exhibit_title_1().'</div>';
+}
+
+function exhibit_link_2(){
+    return '<a href ="'.get_theme_option('ex_link_2').'">';
+}
+
+function exhibit_title_2(){
+    return '<h4>'.get_theme_option('ex_title_2').'</h4>';
+}
+
+function build_exhibit_2(){
+    return exhibit_link_2().exhibit_img_2().'</a><div class = "descr" id = "exhibit_title_2">'.exhibit_title_2().'</div>';
+}
+
+function exhibit_link_3(){
+    return '<a href ="'.get_theme_option('ex_link_3').'">';
+}
+
+function exhibit_title_3(){
+    return '<h4>'.get_theme_option('ex_title_3').'</h4>';
+}
+
+function build_exhibit_3(){
+    return exhibit_link_3().exhibit_img_3_().'</a><div class = "descr" id = "exhibit_title_3">'.exhibit_title_3().'</div>';
+}
+
 ?>

@@ -1405,3 +1405,58 @@ section {
     height: 100%;
     overflow: hidden;
 }
+
+#homepage-text{
+    padding: 15px; 
+    margin-bottom: 10px;
+}
+
+#tri_wrapper{
+    width:100%; 
+    height: auto;
+    padding-right: 3.5%;
+    padding-left: 0;
+}
+
+/* class for each of the three sections*/
+.sub_container { 
+    width: 33.3%; 
+    position:relative;
+}
+
+/* class for images in each of the three sections */
+.n_image{
+    width: 90%;
+    border:5px solid #573d56;
+    margin: 10% 10% 5% 10%;
+}
+
+/* Class for wrapper div of text of each of the three sections */
+.descr{
+    clear:none;
+    margin: 0% 0% 0% 10.5%;
+    position:relative;
+    text-align: center;
+    padding-bottom: .5%;
+    font-variant: small-caps;
+    
+}
+
+/* column 1 of 3*/
+#vertical_1{
+    float: left;
+}
+
+/* column 2 of 3*/
+#vertical_2{
+    display:inline-block;
+}
+
+/*column 3 of 3*/
+#vertical_3{
+    float:right;
+}
+
+.descr h4{
+    margin-top:0;
+}
