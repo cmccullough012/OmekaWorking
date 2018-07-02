@@ -177,5 +177,10 @@ function hide_title(){
     return $show;
 }
 
+/*
+** Build footer text 
+*/
+
+
 
 ?>
