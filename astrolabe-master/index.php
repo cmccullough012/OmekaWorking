@@ -7,11 +7,7 @@
                 <?php echo neatline_home(); ?>
             </div>
         </div>
-        <?php if ($homepageText = get_theme_option('about')): ?>
-        <div id="homepage-text">
-            <?php echo mh_about(); ?>
-        </div>
-        <?php endif; ?>
+        <?php echo featured_text(); ?>
         <div id = "tri_wrapper">
             <div class ="sub_container" id = "vertical_1">
                 <?php echo build_exhibit(1); ?>
@@ -24,7 +20,9 @@
             </div>
         </div>
         <div id = "banner_wrapper">
+            <?php echo build_banner(); ?>
         </div>
+        <?php echo home_about(); ?>
         
     </div>
 </div>

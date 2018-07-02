@@ -6,39 +6,17 @@ add_plugin_hook('public_head', 'queue_theme_assets');
 
 add_filter('exhibit_builder_display_random_featured_exhibit', 'hijack_exhibit_builder_random_featured_exhibit'); 
 
-function mh_about($text=null){
-	if (!$text) {
-		// If the 'About Text' option has a value, use it. Otherwise, use default text
-		$text =
-			get_theme_option('about') ?
-			strip_tags(get_theme_option('about'),'<a><em><i><strong><bold><u>') :
-			__('%s is powered by <a href="http://omeka.org/">Omeka</a> + <a href="http://curatescape.org/">Curatescape</a>, a humanities-centered web and mobile framework available for both Android and iOS devices.',option('site_title'));
-	}
-	return $text;
+function home_about(){
+    $text = '<div class="homepage-text"><h3 id = "About_head">About</h3><p id = "n_about_text">'.get_theme_option('about').'</p><p>Read more <a href = "http://www.rochestercommunitymemory.com/about">here</a></p></div>';
+    return $text;
 }
                 
 
-function mh_home_about($length=800,$html=null){
-
-	$html .= '<div class="about-text">';
-		$html .= '<article>';
-			
-			$html .= '<header>';
-				$html .= '<h2>'.option('site_title').'</h2>';
-				$html .= '<span class="sponsor">'.__('A project by').' <span class="sponsor-name">'.mh_owner_link().'</span></span>';
-			$html .= '</header>';
-		
-			$html .= '<div class="about-main"><p>';
-				$html .= substr(mh_about(),0,$length);
-				$html .= ($length < strlen(mh_about())) ? '... ' : null;
-				$html .= ' <a href="'.url('about').'">'.__('Read more <span>About Us</span>').'</a>';
-			$html .= '</p></div>';
-	
-		$html .= '</article>';
-	$html .= '</div>';
-
-	return $html;
+function featured_text(){
+    $text = '<div id="featured-text" class = "homepage-text"><h3 id = "Featured_head">'.get_theme_option('text_heading').'</h3><p id = featured_text_body>'.get_theme_option('text_area').'</p></div>';
+    return $text;
 }
+
 
 /*
 ** Logo URL
@@ -129,15 +107,19 @@ function exhibit_img($exhibitNumber){
     $img = '<img src="'.get_theme_option($option).'" id ="exhibit3" class = "n_image"/>';
     return $img;
 }
-/*
+
+/*function bnner_img(){
+    return '<img src="'.get_theme_option('bnner_img').'" id ="banner_image" />';
+}*/
+
 function build_exhibit($exhibitNumber){
     $exhibit = exhibit_link($exhibitNumber).exhibit_img($exhibitNumber).'</a><div class = "descr" id = "exhibit_title_3">'.exhibit_title($exhibitNumber).'</div>';
     return $exhibit;
 }
 
 function build_banner(){
-    $bannerText = '<a href ="'.get_theme_option('banner_url').'"/><img src = "'.get_theme_option('banner_img').'" id = "front_banner" alt = "'.get_theme_option('banner_alt').'/></a>';
+    $bannerText = '<a href ="'.get_theme_option('banner_url').'"/><img src = "'.get_theme_option('banner_img').'" id = "front_banner" alt = "'.get_theme_option('banner_alt').'"/></a>';
     return $bannerText;
-}*/
+}
 
 ?>

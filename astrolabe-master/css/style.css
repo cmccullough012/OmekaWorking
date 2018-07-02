@@ -628,7 +628,7 @@ section {
     margin: 1.5em 0;
   }
 
-  h3 + p,
+  /*h3 + p,*/
   h3 + ul,
   h3 + ol, h4 + p,
   h4 + ul,
@@ -1406,13 +1406,22 @@ section {
     overflow: hidden;
 }
 
-#homepage-text{
+.homepage-text{
     padding: 15px; 
     margin-bottom: 15px;
     margin-top:15px;
     background: #f7f6f1;
     border:5px solid #573d56;
 }
+
+.homepage-text h3{
+    color: #573d56; 
+    font-variant: small-caps;
+    margin-top:0;
+    text-align: center;
+}
+
+
 
 #tri_wrapper{
     width:100%; 
@@ -1463,3 +1472,4 @@ section {
 .descr h4{
     margin-top:0;
 }
+
