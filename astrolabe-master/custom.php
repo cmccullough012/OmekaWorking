@@ -82,6 +82,10 @@ function media_home($class="", $max=3){
 	}
 }
 
+/*
+** Inserts an iframe for the Neatline map on homepage 
+*/
+
 function neatline_home(){
     $neatline = get_theme_option('neatline_home');
     if (!empty($neatline)){
@@ -89,19 +93,30 @@ function neatline_home(){
     } 
 }
 
-
+/*
+** Formats exhibit title for the three featured exhibits
+** on the homepage
+*/
 function exhibit_title($exhibitNumber){
     $option = 'ex_title_'.$exhibitNumber;
     $title = '<h4>'.get_theme_option($option).'</h4>';
     return $title;
 }
 
+/*
+** Formats link each exhibit photo directs to for the three 
+** featured exhibits on the homepage
+*/
 function exhibit_link($exhibitNumber){
     $option = 'ex_link_'.$exhibitNumber;
     $link = '<a href ="'.get_theme_option($option).'">';
     return $link;
 }
 
+/*
+** Formats image for each exhibit for the three 
+** featured exhibits on the homepage
+*/
 function exhibit_img($exhibitNumber){
     $option = 'ex_img_'.$exhibitNumber;
     $img = '<img src="'.get_theme_option($option).'" id ="exhibit3" class = "n_image"/>';
@@ -112,11 +127,18 @@ function exhibit_img($exhibitNumber){
     return '<img src="'.get_theme_option('bnner_img').'" id ="banner_image" />';
 }*/
 
+/*
+** Builds exhibit using the previous exhibit functions
+*/
 function build_exhibit($exhibitNumber){
     $exhibit = exhibit_link($exhibitNumber).exhibit_img($exhibitNumber).'</a><div class = "descr" id = "exhibit_title_3">'.exhibit_title($exhibitNumber).'</div>';
     return $exhibit;
 }
 
+/*
+** Builds banner code with the link the banner directs to
+** and the link to the banner image 
+*/
 function build_banner(){
     $bannerText = '<a href ="'.get_theme_option('banner_url').'"/><img src = "'.get_theme_option('banner_img').'" id = "front_banner" alt = "'.get_theme_option('banner_alt').'"/></a>';
     return $bannerText;
@@ -124,7 +146,7 @@ function build_banner(){
 
 
 /*
-** Logo URL
+** Formats logo url after uploading
 */
 function logo_url()
 {
@@ -134,12 +156,17 @@ function logo_url()
 }
 
 /*
-** Logo IMG Tag
+** Formats logot to insert 
 */
 function insert_logo(){
 	return '<a href = "http://www.rochestercommunitymemory.com/"><img src="'.logo_url().'" alt="'.option('site_title').'" id = "home_Logo"/></a>';
 }
 
+/*
+** Checks whether or not the site title should be shown
+** If not, search container goes in line with the logo
+** If yes, search container goes in line with the title 
+*/
 function hide_title(){
     $show = get_theme_option('title_off');
     if ($show ==1){
