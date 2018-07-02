@@ -122,4 +122,33 @@ function build_banner(){
     return $bannerText;
 }
 
+
+/*
+** Logo URL
+*/
+function logo_url()
+{
+	$logo = get_theme_option('main_logo');
+	$logo_url = $logo ? WEB_ROOT.'/files/theme_uploads/'.$logo : img('home-logo.png');
+	return $logo_url;
+}
+
+/*
+** Logo IMG Tag
+*/
+function insert_logo(){
+	return '<a href = "http://www.rochestercommunitymemory.com/"><img src="'.logo_url().'" alt="'.option('site_title').'" id = "home_Logo"/></a>';
+}
+
+function hide_title(){
+    $show = get_theme_option('title_off');
+    if ($show ==1){
+        $show = '<div id="search-container" style = "margin-top:80px">'.search_form(array('form_attributes' => array('role' => 'search'))).'</div>';
+    }else{
+        $show = '</div><div id = "head_row_2"><h1 id="site-title">'.link_to_home_page(theme_logo()).'</h1><div id="search-container">'.search_form(array('form_attributes' => array('role' => 'search'))).'</div></div>';
+    }
+    return $show;
+}
+
+
 ?>

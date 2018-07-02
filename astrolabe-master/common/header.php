@@ -22,13 +22,14 @@
     <header role="banner">
 
         <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
-
-        <?php echo theme_header_image(); ?>
-
-        <h1 id="site-title"><?php echo link_to_home_page(theme_logo()); ?></h1>
-
-        <div id="search-container">
-            <?php echo search_form(array('form_attributes' => array('role' => 'search'))); ?>
+        <div id = "head_wrap">
+            <!-- a div to hold the logo and title -->
+            <div id = "head_identifiers">
+                <div id = "logo_wrap">
+                    <?php echo insert_logo(); ?>
+                </div>
+                <?php echo hide_title(); ?>
+            </div>
         </div>
 
         <nav id="top-nav">
