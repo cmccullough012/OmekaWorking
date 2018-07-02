@@ -14,30 +14,16 @@
         <?php endif; ?>
         <div id = "tri_wrapper">
             <div class ="sub_container" id = "vertical_1">
-                <?php echo build_exhibit_1(); ?>
-                <!--<a href ="http://communityplacememory.omeka.net/exhibits/show/public-market">
-                    
-                </a>
-                <div class = "descr" id ="p1">
-                    <h4>Rochester Public Market</h4>
-                </div> -->
+                <?php echo build_exhibit(1); ?>
             </div>
             <div class ="sub_container" id = "vertical_2">
-                <a href ="http://communityplacememory.omeka.net/exhibits/show/central">
-                    <?php echo exhibit_img_2(); ?>
-                </a>
-                <div class = "descr" id= "p2">
-                    <h4>Central Park</h4>                 
-                </div>
+                <?php echo build_exhibit(2); ?>
             </div>
             <div class ="sub_container" id = "vertical_3">
-                <a href ="http://communityplacememory.omeka.net/exhibits/show/textiles">
-                    <?php echo exhibit_img_3(); ?>
-                </a>
-                <div class = "descr" id="p3">
-                    <h4>Textile Industry</h4>
-                </div>
+                <?php echo build_exhibit(3); ?>
             </div>
+        </div>
+        <div id = "banner_wrapper">
         </div>
         
     </div>

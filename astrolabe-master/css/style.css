@@ -1408,7 +1408,10 @@ section {
 
 #homepage-text{
     padding: 15px; 
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    margin-top:15px;
+    background: #f7f6f1;
+    border:5px solid #573d56;
 }
 
 #tri_wrapper{
