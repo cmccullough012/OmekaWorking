@@ -3,22 +3,11 @@
     <footer role="contentinfo">
         
         <div id = "footer_container">
-            <div id = "footer_text" class = "foot_section">
-                <p>This is some footer text. The customizations under the configure tab for the footer are not yet operational.</p>
-            </div>
-            <div id = "footer_logo" class = "foot_section">
-                <a href = "www.rit.edu"><img src = "https://i.imgur.com/awdWLE0.png" id = "foot_logo_1" alt = "RIT"></a>
-                <a href = "www.neh.gov"><img src = "https://i.imgur.com/WJ4eI8Y.png" id = "foot_logo_2" alt = "NEH"></a>
-            </div>
-            <div id = "footer_contact" class = "foot_section">
-                <h4>Contact</h4>
-                <p>1 Lomb Memorial dr<br>Rochester, NY 14623</p>
-                <p>rochcmp@gmail.com</p>
-            </div>
-            <div id = "footer_social" class = "foot_section">
-                <h4>Follow Us</h4>
-                <p>This section under construction.</p>
-            </div>
+            <?php echo build_footer_text(); 
+                echo build_footer_logos();
+                echo build_footer_contact();
+                echo build_footer_social();
+            ?>
         </div>
 
         <nav role="navigation">

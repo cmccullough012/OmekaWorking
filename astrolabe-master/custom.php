@@ -6,6 +6,10 @@ add_plugin_hook('public_head', 'queue_theme_assets');
 
 add_filter('exhibit_builder_display_random_featured_exhibit', 'hijack_exhibit_builder_random_featured_exhibit'); 
 
+function read_more_button($link, $button_id){
+    $read_more = '<a href = "'.$link.'"<div id = "'.$button_id'" class = "read_more_button"><p>Read more</p></div>';
+}
+
 function home_about(){
     $text = '<div class="homepage-text"><h3 id = "About_head">About</h3><p id = "n_about_text">'.get_theme_option('about').'</p><p>Read more <a href = "http://www.rochestercommunitymemory.com/about">here</a></p></div>';
     return $text;
@@ -35,28 +39,6 @@ function home_logo(){
 	return '<img src="'.home_logo_url().'" alt="'.option('site_title').'"/>';
 }
 
-/*
-** Build an array of social media links (including icons) from theme settings
-*/
-function media_array($max=5){
-	$social=array();
-	($email=get_theme_option('contact_email') ? get_theme_option('contact_email') : get_option('administrator_email')) ? array_push($social,'<a target="_blank" rel="noopener" title="Email" href="mailto:'.$email.'" class="button social icon email"><i class="fa fa-lg fa-envelope" aria-hidden="true"><span> Email</span></i></a>') : null;		
-	($twitter=get_theme_option('twitter_username')) ? array_push($social,'<a target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/'.$twitter.'" class="button social icon twitter"><i class="fa fa-lg fa-twitter" aria-hidden="true"><span> Twitter</span></i></a>') : null;
-	($instagram=get_theme_option('instagram_username')) ? array_push($social,'<a target="_blank" rel="noopener" title="Instagram" href="https://www.instagram.com/'.$instagram.'" class="button social icon instagram"><i class="fa fa-lg fa-instagram" aria-hidden="true"><span> Instagram</span></i></a>') : null;		
-    ($facebook=get_theme_option('facebook_link')) ? array_push($social,'<a target="_blank" rel="noopener" title="Facebook" href="'.$facebook.'" class="button social icon facebook"><i class="fa fa-lg fa-facebook" aria-hidden="true"><span> Facebook</span></i></a>') : null;
-	($youtube=get_theme_option('youtube_username')) ? array_push($social,'<a target="_blank" rel="noopener" title="Youtube" href="'.$youtube.'" class="button social icon youtube"><i class="fa fa-lg fa-youtube-play" aria-hidden="true"><span> Youtube</span></i></a>') : null;				
-
-	if( ($total=count($social)) > 0 ){
-		if($total>$max){
-			for($i=$total; $i>($max-1); $i-- ){
-				unset($social[$i]);
-			}			
-		}
-		return $social;
-	}else{
-		return false;
-	}	
-}
 
 /*
 ** Social media links for footer
@@ -180,7 +162,71 @@ function hide_title(){
 /*
 ** Build footer text 
 */
+function build_footer_text(){
+    $foot_text = get_theme_option('foot_text');
+    return '<div id = "footer_text" class = "foot_section"><p>'.$foot_text.'</p></div>';
+}
 
 
+function logo_variable_url($upload, $name)
+{
+	$logo = get_theme_option($upload);
+	$logo_url = $logo ? WEB_ROOT.'/files/theme_uploads/'.$logo : img($name);
+	return $logo_url;
+}
+
+/*
+** Build footer logo section
+*/
+function build_footer_logos(){
+    $logo1 = '<a href = "'.get_theme_option('foot_url_1').'"><img src = "'.logo_variable_url('foot_img_1', 'foot_img_1').'" id = "foot_logo_1" alt = "'.get_theme_option('foot_alt_1').'"></a>';
+    $logo2 = '<a href = "'.get_theme_option('foot_url_2').'"><img src = "'.logo_variable_url('foot_img_2', 'foot_img_2').'" id = "foot_logo_2" alt = "'.get_theme_option('foot_alt_2').'"></a>';
+    return '<div id = "footer_logo" class = "foot_section">'.$logo1.$logo2.'</div>';
+}
+
+/*
+** Build footer contact 
+*/
+function build_footer_contact(){
+    $address = '<p>'.get_theme_option('foot_address').'</p>';
+    $phone = '<p>'.get_theme_option('foot_phone').'</p>';
+    $email = '<p>'.get_theme_option('contact_email').'</p>';
+    return '<div id = "footer_contact" class = "foot_section"><h4>Contact</h4>'.$address.$phone.$email.'</div>';
+}
+
+/*
+** Build footer social links 
+*/
+
+function build_footer_social(){
+    $twitter_url = get_theme_option('twitter_username');
+    $youtube_url = get_theme_option('youtube_username');
+    $facebook_url = get_theme_option('facebook_link');
+    
+    $twitter = null;
+    $youtube = null;
+    $facebook = null; 
+    $title = '<h4>Follow Us</h4>';
+
+    if (!empty($twitter_url)){
+        $twitter = '<a href = "'.$twitter_url.'"><img src = "https://i.imgur.com/GzurvMk.png" id = "twitter" alt = "twitter" /></a>';
+    }
+    
+    if (!empty($youtube_url)){
+        $youtube = '<a href = "'.$youtube_url.'"><img src = "https://i.imgur.com/367xSxZ.png" id = "youtube" alt = "youtube" /></a>';
+    }
+    
+    if (!empty($facebook_url)){
+        $facebook = '<a href = "'.$faceboook_url.'"><img src = "https://i.imgur.com/nzHDRdv.png" id = "facebook" alt = "facebook" /></a>';
+    }
+    
+    if (empty($twitter) && empty($youtube) && empty($facebook)){
+        $title = null;
+    }
+    
+    return '<div id = "footer_social" class = "foot_section">'.$title.$twitter.$youtube.$facebook.'</div>';
+    
+    
+}
 
 ?>
