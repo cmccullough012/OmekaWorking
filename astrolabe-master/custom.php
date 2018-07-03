@@ -7,11 +7,12 @@ add_plugin_hook('public_head', 'queue_theme_assets');
 add_filter('exhibit_builder_display_random_featured_exhibit', 'hijack_exhibit_builder_random_featured_exhibit'); 
 
 function read_more_button($link, $button_id){
-    $read_more = '<a href = "'.$link.'"<div id = "'.$button_id'" class = "read_more_button"><p>Read more</p></div>';
+    $read_more = '<a href = "'.$link.'"><p id = "'.$button_id.'" class = "read_more_button">Read more >></p></a>';
+    return $read_more;
 }
 
 function home_about(){
-    $text = '<div class="homepage-text"><h3 id = "About_head">About</h3><p id = "n_about_text">'.get_theme_option('about').'</p><p>Read more <a href = "http://www.rochestercommunitymemory.com/about">here</a></p></div>';
+    $text = '<div class="homepage-text"><h3 id = "About_head">About</h3><p id = "n_about_text">'.get_theme_option('about').'</p>'.read_more_button('http://rochestercommunitymemory.com/about', 'About_read_more').'</div>';
     return $text;
 }
                 
@@ -101,7 +102,7 @@ function exhibit_link($exhibitNumber){
 */
 function exhibit_img($exhibitNumber){
     $option = 'ex_img_'.$exhibitNumber;
-    $img = '<img src="'.get_theme_option($option).'" id ="exhibit3" class = "n_image"/>';
+    $img = '<img src="'.image_url($option, $option).'" id ="exhibit'.$exhibitNumber.'" class = "n_image" alt = "'.exhibit_title($exhibitNumber).'"/>';
     return $img;
 }
 
@@ -113,7 +114,7 @@ function exhibit_img($exhibitNumber){
 ** Builds exhibit using the previous exhibit functions
 */
 function build_exhibit($exhibitNumber){
-    $exhibit = exhibit_link($exhibitNumber).exhibit_img($exhibitNumber).'</a><div class = "descr" id = "exhibit_title_3">'.exhibit_title($exhibitNumber).'</div>';
+    $exhibit = exhibit_link($exhibitNumber).exhibit_img($exhibitNumber).'</a><div class = "descr" id = "exhibit_title_'.$exhibitNumber.'">'.exhibit_title($exhibitNumber).'</div>';
     return $exhibit;
 }
 
@@ -122,7 +123,7 @@ function build_exhibit($exhibitNumber){
 ** and the link to the banner image 
 */
 function build_banner(){
-    $bannerText = '<a href ="'.get_theme_option('banner_url').'"/><img src = "'.get_theme_option('banner_img').'" id = "front_banner" alt = "'.get_theme_option('banner_alt').'"/></a>';
+    $bannerText = '<a href ="'.get_theme_option('banner_url').'"/><img src = "'.image_url('banner_img', 'banner_home').'" id = "front_banner" alt = "'.get_theme_option('banner_alt').'"/></a>';
     return $bannerText;
 }
 
@@ -168,19 +169,31 @@ function build_footer_text(){
 }
 
 
-function logo_variable_url($upload, $name)
+/*function logo_variable_url($upload, $name)
 {
 	$logo = get_theme_option($upload);
 	$logo_url = $logo ? WEB_ROOT.'/files/theme_uploads/'.$logo : img($name);
 	return $logo_url;
+} */
+
+/*
+** Generates a URL and stores file locally for any image
+** $upload refers to the name of the item in the config.ini file
+** $name refers to a name to store the file under 
+*/
+
+function image_url($upload, $name){
+    $image = get_theme_option($upload);
+    $image_url = $image ? WEB_ROOT.'/files/theme_uploads/'.$image : img($name);
+    return $image_url;
 }
 
 /*
 ** Build footer logo section
 */
 function build_footer_logos(){
-    $logo1 = '<a href = "'.get_theme_option('foot_url_1').'"><img src = "'.logo_variable_url('foot_img_1', 'foot_img_1').'" id = "foot_logo_1" alt = "'.get_theme_option('foot_alt_1').'"></a>';
-    $logo2 = '<a href = "'.get_theme_option('foot_url_2').'"><img src = "'.logo_variable_url('foot_img_2', 'foot_img_2').'" id = "foot_logo_2" alt = "'.get_theme_option('foot_alt_2').'"></a>';
+    $logo1 = '<a href = "'.get_theme_option('foot_url_1').'"><img src = "'.image_url('foot_img_1', 'foot_img_1').'" id = "foot_logo_1" alt = "'.get_theme_option('foot_alt_1').'"></a>';
+    $logo2 = '<a href = "'.get_theme_option('foot_url_2').'"><img src = "'.image_url('foot_img_2', 'foot_img_2').'" id = "foot_logo_2" alt = "'.get_theme_option('foot_alt_2').'"></a>';
     return '<div id = "footer_logo" class = "foot_section">'.$logo1.$logo2.'</div>';
 }
 

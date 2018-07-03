@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><?php echo option('site_title'); echo isset($title) ? ' | ' . strip_formatting($title) : ''; ?></title>
     <meta name="viewport" content="width=device-width">
+    <head profile="http://www.w3.org/2005/10/profile">
+    <link rel="icon" 
+          type="image/png" 
+          href="<?php echo image_url('favicon', 'favicon'); ?>">
 
     <?php echo auto_discovery_link_tags(); ?>
 

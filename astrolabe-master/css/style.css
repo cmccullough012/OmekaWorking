@@ -1410,6 +1410,7 @@ section {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    border: 1px solid #573d56;
 }
 
 /* style for all text blocks and headers on homepage */
@@ -1571,3 +1572,17 @@ section {
     padding-left:10%;
 }
 
+.read_more_button{
+    border-top: 1px solid #573d56;
+    border-bottom: 1px solid #573d56;
+    font-style: italic;
+    width: 15%;
+    margin: 5px;
+    position: relative;
+    left: 85%;
+    text-align: center;
+}
+
+.homepage-text a{
+    text-decoration: none;
+}
