@@ -3,19 +3,41 @@
     margin-bottom: 1.2em !important;
 }
 
+/*
+** Take out the top margin if using a header.
+*/
+
 #exhibit-pages ul {
     margin-left: 1em;
+    margin-top: 2.5em; 
+    font-style: italic;
 }
 
+/*
+** puts the nav list at the top insead of bottom 
+*/
 #exhibit-pages{
     float:right;
     clear:none;
     text-align: right;
 }
 
+#exhibit-pages-bottom {
+    clear:none;
+    text-align: center;
+    width:100%;
+    display:inline-block;
+
+}
+
+/*
+** hides header for nav bar until I decide if I want it 
+*/
+
 #exhibit-pages h4{
     margin-bottom: .5%;
     margin-top:.6em;
+    display:none;
 }
 
 #exhibit_title_id{
@@ -77,3 +99,9 @@
 .download-file * {
     vertical-align: top;
 }
+
+
+.browse_description img {
+    display:none;
+}
+

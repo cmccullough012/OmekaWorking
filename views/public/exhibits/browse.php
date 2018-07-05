@@ -29,7 +29,7 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
             <?php echo exhibit_builder_link_to_exhibit($exhibit, $exhibitImage, array('class' => 'image')); ?>
         <?php endif; ?>
         <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
-        <div class="description"><?php echo $exhibitDescription; ?></div>
+        <div class="browse_description"><?php echo $exhibitDescription; ?></div>
         <?php endif; ?>
         <?php if ($exhibitTags = tag_string('exhibit', 'exhibits')): ?>
         <p class="tags"><?php echo $exhibitTags; ?></p>

@@ -5,7 +5,7 @@ $pageTree = exhibit_builder_page_tree();
 if ($pageTree):
 ?>
 <nav id="exhibit-pages">
-     <?php echo metadata('exhibit','title'); echo $pageTree; ?>
+     <?php echo $pageTree; ?>
 </nav>
 <?php endif; ?>
 
@@ -27,6 +27,14 @@ if ($pageTree):
 <?php endif; ?>
 </div>
 
-
+<?php
+$pageTree = exhibit_builder_page_tree();
+if ($pageTree):
+?>
+<nav id="exhibit-pages-bottom">
+    <h4>Explore <?php echo exhibit_builder_link_to_exhibit($exhibit); ?></h4>
+     <?php echo $pageTree; ?>
+</nav>
+<?php endif; ?>
 
 <?php echo foot(); ?>
