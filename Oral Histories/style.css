@@ -1,0 +1,51 @@
+oral_hist_wrap{
+    width:90%;
+}
+
+.iframe_row{
+    width:30%;
+    padding:2%;
+}
+
+.oral_video_L{
+    float:left;
+}
+
+.oral_video_R{
+    float:right;
+}
+
+.oral_video_M{
+    display:inline-block;
+}
+
+#iframe_row2{
+    clear:all;
+}
+
+.article_photo_left{
+    max-width:300px;
+    float:left;
+    margin: 3% 3% 2% 0;
+}
+#oral_article_photo{
+    margin-top:0;
+}
+
+#oral_videos{
+    clear:both;
+}
+
+.iframe_row{
+    height:350px;
+    width:100%;
+    clear:both;
+}
+
+.oral_video_L, .oral_video_M, .oral_video_R{
+    width: 33.3%; 
+    position:relative;
+    padding:1.5%;
+}
+
+

@@ -29,7 +29,15 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
             <?php echo exhibit_builder_link_to_exhibit($exhibit, $exhibitImage, array('class' => 'image')); ?>
         <?php endif; ?>
         <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
-        <div class="browse_description"><?php echo $exhibitDescription; ?></div>
+        <div class="browse_description"><?php 
+           function trunc($text, $length) {
+               $length = abs((int)$length);
+               if(strlen($text) > $length) {
+                  $text = preg_replace("/^(.{1,$length})(\s.*|$)/s", '\\1...', $text);
+               }
+               return($text);
+            }
+            echo trunc($exhibitDescription, 250); ?></div>
         <?php endif; ?>
         <?php if ($exhibitTags = tag_string('exhibit', 'exhibits')): ?>
         <p class="tags"><?php echo $exhibitTags; ?></p>
