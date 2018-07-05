@@ -1085,8 +1085,12 @@ section {
     color: rgba(75, 75, 75, 0.5);
   }
 
+/*
+** display:none to hide the previous item, next item buttons. 
+    If you want those, display block.
+*/
   .item-pagination {
-    display: block;
+    display: none;
     clear: both;
     text-align: center;
     padding-top: 1.5em;
@@ -1509,11 +1513,12 @@ section {
     width:100%;
 }
 
-
+/* sets the width of each of the four foot sections */
 .foot_section{
     width: 24%; 
     
 }
+
 
 .foot_section h4{
     margin-top: 10.5%;
@@ -1553,6 +1558,8 @@ section {
     margin:2%;
 }
 
+/* Sets up footer logos; arranged so that if one isn't used 
+    and isn't displayed, everything is ok'*/
 #twitter {
     float:left;
 }
@@ -1565,6 +1572,7 @@ section {
     display: inline-block;
 }
 
+/* The two sponsored logos - RIT and NEH right now*/
 #foot_logo_1, #foot_logo_2{
     width: 80%;
     padding-bottom: 4%;
@@ -1572,6 +1580,7 @@ section {
     padding-left:10%;
 }
 
+/* More attractive read more button for the about section */
 .read_more_button{
     border-top: 1px solid #573d56;
     border-bottom: 1px solid #573d56;
@@ -1585,4 +1594,21 @@ section {
 
 .homepage-text a{
     text-decoration: none;
+}
+
+/* Just a backup to push the comments section down on individual items
+    it was riding up */
+#comments-container{
+    clear:both; 
+    padding-top:2em;
+}
+
+.field .explanation{
+    display:none;
+}
+
+#mh_article_photo_1{
+    max-width:300px;
+    float:left;
+    margin: 3% 3% 2% 0;
 }
