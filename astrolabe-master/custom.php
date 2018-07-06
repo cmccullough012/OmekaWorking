@@ -6,13 +6,21 @@ add_plugin_hook('public_head', 'queue_theme_assets');
 
 add_filter('exhibit_builder_display_random_featured_exhibit', 'hijack_exhibit_builder_random_featured_exhibit'); 
 
-function read_more_button($link, $button_id){
-    $read_more = '<a href = "'.$link.'"><p id = "'.$button_id.'" class = "read_more_button">Read more >></p></a>';
+/*
+** Adds a fancy read more button to whatever section
+** $link URL to direct to
+** $button_id css id to style the button later 
+** $button_text "Read more" or "more" or "continue" or whatever
+*/
+
+function read_more_button($link, $button_id, $button_text){
+    $read_more = '<a href = "'.$link.'"><p id = "'.$button_id.'" class = "read_more_button">'.$button_text.' >></p></a>';
     return $read_more;
 }
 
+
 function home_about(){
-    $text = '<div class="homepage-text"><h3 id = "About_head">About</h3><p id = "n_about_text">'.get_theme_option('about').'</p>'.read_more_button('http://rochestercommunitymemory.com/about', 'About_read_more').'</div>';
+    $text = '<div class="homepage-text"><h3 id = "About_head">About</h3><p id = "n_about_text">'.get_theme_option('about').'</p>'.read_more_button('http://rochestercommunitymemory.com/about', 'About_read_more', 'Read more').'</div>';
     return $text;
 }
                 
