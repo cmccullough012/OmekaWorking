@@ -1616,6 +1616,7 @@ section {
     max-width:300px;
     float:left;
     margin: 3% 3% 2% 0;
+    border: 10px solid white;
 }
 #oral_article_photo{
     margin-top:0;
@@ -1661,6 +1662,7 @@ oral_hist_wrap{
     width: 33.3%; 
     position:relative;
     padding:1.5%;
+
 }
 
 #oral_videos h2{
@@ -1669,3 +1671,13 @@ oral_hist_wrap{
     font-variant:small-caps;
 }
 
+.oral_caption{
+    text-align:center;
+    font-variant:small-caps;
+    width:315px;
+}
+
+.oral_video{
+    border: 10px solid white;
+    box-shadow: 2px 2px 2px #888888;
+}
