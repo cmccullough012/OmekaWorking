@@ -1,0 +1,47 @@
+Take in links 
+split at line breaks or commas 
+new object from each url and title 
+Loop
+    div row = 1
+    loop while id < 3
+        format url into iframe, id = 1,
+        format title into caption,
+        id++
+    row++
+    
+return html block 
+    
+    
+<?php
+    function simple_pages_oral_history()
+{
+    $textDump = metadata('simple_pages_page', 'text');
+    $elements = explode(';',$textDump);
+    $count = count($elements);
+    $separated = array(null);
+    
+    foreach($elements as $individual){
+        $each = explode(',', $individual);
+        array_push($separated, $each);
+    }
+    
+    $x =0
+    $html = null;
+    
+    while ($x<$count) {
+        $html = $html.'<div id = "iframe_row_'.$x.'">';
+        $i=1
+        while ($i<4){
+            if ($i=1){
+                $side = "L";
+            }else if ($i=2){
+                $side = "M";
+            }else if ($i=3){
+                $side="R";
+            }
+            $html = $html.'<iframe id ="oral_vid_'.$i.'" class = "oral_vid_"'.$side.'" src = "'.$separated[($x+i)]
+        }
+    }
+        
+        
+?>
