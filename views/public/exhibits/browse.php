@@ -23,29 +23,31 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
 <?php $exhibitCount = 0; ?>
 <?php foreach (loop('exhibit') as $exhibit): ?>
     <?php $exhibitCount++; ?>
+        <?php
+            /*Hides the exhibit titled "Rochester Communities" on the browse page so it can appear as an upper-level page without confusion*/
+            $compare = strcmp(metadata('exhibit', 'title'), 'Rochester Communities'); ?>
+        <?php if ($compare ==0): 
+            $exhibitCount++;
+            continue;
+        ?>
+        <?php endif; ?>
     <div class="exhibit <?php if ($exhibitCount%2==1) echo ' even'; else echo ' odd'; ?>">
-        <h2><?php echo link_to_exhibit(); ?></h2>
-        <?php if ($exhibitImage = record_image($exhibit)): ?>
-            <?php echo exhibit_builder_link_to_exhibit($exhibit, $exhibitImage, array('class' => 'image')); ?>
-        <?php endif; ?>
-        <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
-        <div class="browse_description"><?php 
-           function trunc($text, $length) {
-               $length = abs((int)$length);
-               if(strlen($text) > $length) {
-                  $text = preg_replace("/^(.{1,$length})(\s.*|$)/s", '\\1...', $text);
-               }
-               return($text);
-            }
-            echo trunc($exhibitDescription, 250); ?></div>
-        <?php endif; ?>
-        <?php if ($exhibitTags = tag_string('exhibit', 'exhibits')): ?>
-        <p class="tags"><?php echo $exhibitTags; ?></p>
-        <?php endif; ?>
+            <h2><?php echo link_to_exhibit(); ?></h2>
+            <?php if ($exhibitImage = record_image($exhibit)): ?>
+                <?php echo exhibit_builder_link_to_exhibit($exhibit, $exhibitImage, array('class' => 'image')); ?>
+            <?php endif; ?>
+            <!-- Shortens summary description to 1000 characters -->
+            <?php if ($description = metadata('exhibit','description', array('snippet' => 1000))): ?>
+                <div class="browse_description">
+                    <?php echo $description; ?>
+                </div>
+            <?php endif; ?>
+            <?php if ($exhibitTags = tag_string('exhibit', 'exhibits')): ?>
+            <p class="tags"><?php echo $exhibitTags; ?></p>
+            <?php endif; ?> 
+        
     </div>
 <?php endforeach; ?>
-
-
 
 <?php else: ?>
 <p><?php echo __('There are no exhibits available yet.'); ?></p>
