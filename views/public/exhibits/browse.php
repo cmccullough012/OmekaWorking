@@ -2,7 +2,19 @@
 $title = __('Browse Exhibits');
 echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
 ?>
-<h1><?php echo $title; ?> <?php echo __('(%s total)', $total_results); ?></h1>
+<h1>
+    <?php foreach (loop('exhibit') as $exhibit): ?>
+        <?php
+            $total_results_adj = $total_results;
+            /*Hides the exhibit titled "Rochester Communities" on the browse page so it can appear as an upper-level page without confusion*/
+            $compare = strcmp(metadata('exhibit', 'title'), 'Rochester Communities');
+        if ($compare ==0): 
+            $total_results_adj = $total_results-1;
+            break;
+        
+        endif; ?>
+    <?php endforeach; ?>
+    <?php echo $title; ?> <?php echo __('(%s total)', $total_results_adj); ?></h1>
 <?php if (count($exhibits) > 0): ?>
 
 <nav class="navigation secondary-nav">
