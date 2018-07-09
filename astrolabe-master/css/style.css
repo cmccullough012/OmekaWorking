@@ -344,6 +344,10 @@ input[type="submit"] {
   /* 2 */
 }
 
+#submit_search{
+    float:right;
+}
+
 /*
  * 1. Addresses box sizing set to content-box in IE8/9
  * 2. Addresses excess padding in IE8/9
@@ -1612,29 +1616,38 @@ section {
     display:none;
 }
 
+/* Formats any small photo or video inserted into a summary/simple page/etc
+    pushes it to the left, text on the right */
 .article_photo_left{
     max-width:300px;
     float:left;
     margin: 3% 3% 2% 0;
     border: 10px solid white;
 }
+
 #oral_article_photo{
     margin-top:0;
 }
 
+/* a little extra padding on content area */
 div[role=main]{
     padding:4%;
 }
 
+/* wrapper div for oral history simple page */
 oral_hist_wrap{
     width:90%;
 }
 
+/* one row of iframe oral history videos */
 .iframe_row{
-    width:30%;
+    height:350px;
+    width:100%;
+    clear:both;
     padding:2%;
 }
 
+/* Aligns videos to a three column view */
 .oral_video_L{
     float:left;
 }
@@ -1648,21 +1661,15 @@ oral_hist_wrap{
 }
 
 
-#oral_videos{
-    clear:both;
-}
-
-.iframe_row{
-    height:350px;
-    width:100%;
-    clear:both;
-}
-
 .oral_video_L, .oral_video_M, .oral_video_R{
     width: 33.3%; 
     position:relative;
     padding:1.5%;
 
+}
+
+#oral_videos{
+    clear:both;
 }
 
 #oral_videos h2{
@@ -1680,4 +1687,15 @@ oral_hist_wrap{
 .oral_video{
     border: 10px solid white;
     box-shadow: 2px 2px 2px #888888;
+}
+
+
+/* a little extra room on exhibits browse description section*/
+.browse_description{
+    margin-bottom: 3%;
+    margin-left:3%;
+}
+
+.exhibit .image, .exhibit .image{
+    padding-left:3%;
 }
