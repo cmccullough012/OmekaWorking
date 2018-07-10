@@ -1381,7 +1381,7 @@ section {
 }
 
 
-/* EVERYTHING FROM HERE ON HAS BEEN ADDED BY @cmccullough.012
+/* EVERYTHING FROM HERE ON HAS BEEN ADDED BY @cmccullough012
 --------------------------------------------------------------*/
  
 
@@ -1401,6 +1401,7 @@ section {
     padding-bottom: 21px;
     float: left;
     width: 100%;
+    position:relative;
 }
 
 /* establishing map dimensions */
@@ -1450,6 +1451,7 @@ section {
 .sub_container { 
     width: 33.3%; 
     position:relative;
+    float:left;
 }
 
 /* class for images in each of the three sections */
@@ -1470,20 +1472,20 @@ section {
     
 }
 
-/* column 1 of 3*/
+/* column 1 of 3
 #vertical_1{
     float: left;
 }
 
-/* column 2 of 3*/
+/* column 2 of 3
 #vertical_2{
     display:inline-block;
 }
 
-/*column 3 of 3*/
+/*column 3 of 3
 #vertical_3{
     float:right;
-}
+}*/
 
 .descr h4{
     margin-top:0;
@@ -1698,4 +1700,33 @@ oral_hist_wrap{
 
 .exhibit .image, .exhibit .image{
     padding-left:3%;
+}
+
+section{
+    width:100%
+}
+
+@media screen and (max-width:1000px){
+    #n_wrap{
+        overflow: hidden;
+        width: 700px;
+        background:#fff;
+        max-width: 1000px;
+    }
+
+
+}
+
+@media screen and (max-width:700px){
+    #n_wrap{
+        overflow: hidden;
+        width: 700px;
+        background:#fff;
+        max-width: 1000px;
+    }
+    
+    h4{
+        
+    }
+
 }

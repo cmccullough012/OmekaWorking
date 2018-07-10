@@ -3,32 +3,35 @@
 <div id = "n_wrap">
     <div id = "n_content">
         <!-- Neatline map section -->
-        <div id = "n_map_container">
-            <div id = "neatline_home">
-                <?php echo neatline_home(); ?>
+        <section id = "map">
+            <div id = "n_map_container">
+                <div id = "neatline_home">
+                    <?php echo neatline_home(); ?>
+                </div>
             </div>
-        </div>
-        <!-- Text underneath map -->
-        <?php echo featured_text(); ?>
+            <!-- Text underneath map -->
+            <?php echo featured_text(); ?>
+        </section>
         <!--Three featured exhibits-->
-        <div id = "tri_wrapper">
-            <div class ="sub_container" id = "vertical_1">
+        <section id = "tri_wrapper">
+            <aside class ="sub_container" id = "vertical_1">
                 <?php echo build_exhibit(1); ?>
-            </div>
-            <div class ="sub_container" id = "vertical_2">
+            </aside>
+            <aside class ="sub_container" id = "vertical_2">
                 <?php echo build_exhibit(2); ?>
-            </div>
-            <div class ="sub_container" id = "vertical_3">
+            </aside>
+            <aside class ="sub_container" id = "vertical_3">
                 <?php echo build_exhibit(3); ?>
-            </div>
-        </div>
+            </aside>
+        </section>
         <!-- Banner portal into another exhibit or simple page -->
-        <div id = "banner_wrapper">
+        <section id = "banner_wrapper">
             <?php echo build_banner(); ?>
-        </div>
+        </section>
         <!-- About text section -->
-        <?php echo home_about(); ?>
-        
+        <section id = "about">
+            <?php echo home_about(); ?>
+        </section>
     </div>
 </div>
 
