@@ -161,9 +161,9 @@ function insert_logo(){
 function hide_title(){
     $show = get_theme_option('title_off');
     if ($show ==1){
-        $show = '<div id="search-container" style = "margin-top:80px">'.search_form(array('form_attributes' => array('role' => 'search'))).'</div>';
+        $show = '</a><div id="search-container" class = "no_title">'.search_form(array('form_attributes' => array('role' => 'search'))).'</div>';
     }else{
-        $show = '</div><div id = "head_row_2"><h1 id="site-title">'.link_to_home_page(theme_logo()).'</h1><div id="search-container">'.search_form(array('form_attributes' => array('role' => 'search'))).'</div></div>';
+        $show = '</div><div id = "head_row_2"><h1 id="site-title">'.link_to_home_page(theme_logo()).'</h1><a href = "#" id ="nav_icon"><img src = "https://i.imgur.com/GH9aF56.png"/></a><div id="search-container">'.search_form(array('form_attributes' => array('role' => 'search'))).'</div></div>';
     }
     return $show;
 }

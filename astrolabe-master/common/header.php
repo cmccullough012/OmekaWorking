@@ -19,6 +19,16 @@
 
     <!-- JavaScripts -->
     <?php echo head_js(); ?>
+        
+    <script type="text/javascript">
+        function toggle_visibility(id) {
+           var e = document.getElementById(id);
+           if(e.style.display == 'block')
+              e.style.display = 'none';
+           else
+              e.style.display = 'block';
+        }
+    </script>
 </head>
 
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
@@ -37,6 +47,7 @@
         </div>
 
         <nav id="top-nav">
+            <a href = "#" id ="nav_icon"><img src = "https://i.imgur.com/GH9aF56.png"/></a>
             <?php echo public_nav_main(); ?>
         </nav>
 

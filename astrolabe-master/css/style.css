@@ -1506,6 +1506,10 @@ section {
     float:right;
 }
 
+.no_title{
+    margin-top:80px;
+}
+
 /* restrains the logo size */
 #head_identifiers img{
     max-width: 100%;
@@ -1519,6 +1523,14 @@ section {
 #head_row_2{
     clear: both; 
     width:100%;
+}
+
+#nav_icon{
+    display:none;
+}
+
+#nav_icon img{
+    max-width:85px;
 }
 
 /* sets the width of each of the four foot sections */
@@ -1708,10 +1720,7 @@ section{
     width:100%
 }
 
-#home{
-    position:absolute;
-    padding-left:6%;
-}
+
 
 @media screen and (max-width:1000px){
     #n_wrap{
@@ -1732,9 +1741,14 @@ section{
         padding:0;
     }
     
+    #home{
+        position:absolute;
+        padding-left:6%;
+    }
+    
     #n_wrap{
         overflow: hidden;
-        width: 700px;
+        width: 100%;
         background:#fff;
         max-width: 1000px;
     }
@@ -1749,7 +1763,7 @@ section{
     }
     
     .foot_section{
-        width:90%;
+        width:100%;
     }
     
     #footer_container {
@@ -1826,6 +1840,34 @@ section{
 
 @media screen and (max-width:450px){
     
+   /* div[role=main]{
+        margin-top:5%
+    }*/
+    
+    header[role=banner]{
+        padding-bottom:11%;
+        
+    }
+    
+    #home div[role=main]{
+        margin-top:0;
+    }
+    
+    div[role=main]::before{
+        border-top:1px solid rgba(75, 75, 75, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+        display:block;
+        content:"";
+        height:0;
+    }
+    
+    #n_wrap{
+        overflow: hidden;
+        width: 100%;
+        background:#fff;
+        max-width: 1000px;
+    }
+/* FOOTER THINGS */
     footer nav{
         clear:both;
         padding-top:2%;
@@ -1837,11 +1879,158 @@ section{
         width:55%;
         padding-top:2%;
         padding-left:15%;
+        font-size:.8em;
     }
     
     #footer_social{
         width:45%;
         padding-right:17%;
         padding-top:2%;
+    }
+    
+    
+/* HEADER THINGS */
+    /*nav ul{
+        display:none;
+        position:static;
+    } */
+    
+    #top-nav ul li{
+        width:100%;
+        display:block;
+        text-align:left;
+        background-color:lightgray;
+        padding-left:2%;
+        border:1px solid white;
+    }
+    
+    nav ul li:hover{
+        background-color:darkgray;
+    }
+    
+    #top-nav li::before{
+        display:none;
+    }
+    
+    #nav_icon{
+        display:none;
+        position:absolute;
+        right:20px;
+        top:30px;
+    }
+    
+    header[role=banner] nav{
+        clear:none;
+    }
+    
+    header[role=banner] nav::after{
+        border:none;
+    }
+    
+    header[role=banner] nav ul{
+        line-height:normal;
+        font-size:.7em;
+    }
+    
+    #logo_wrap{
+        width:60%;
+        float:left;
+    }
+    
+    #home #top-nav{
+        width: 30%;
+     /*   margin-right:13%; */
+        margin-top:20px;
+        float:right;
+        line-height:3em;
+        font-size:.9em;
+    }
+    
+    #home #top-nav li{
+        height:40px;
+    }
+    
+    #top-nav{
+        width: 30%;
+     /*   margin-right:13%; */
+        margin-top:20px;
+        float:right;
+        line-height:3em;
+        font-size:.7em;
+
+    }
+    
+    #top-nav li{
+        height:25px;
+    }
+    
+    
+    nav:hover ul{
+        display:block;
+    }
+    
+    
+    
+    #home_logo{
+        width:400px;
+    }
+    
+    #head_identifiers img{
+        max-height:none;
+    }
+    
+    #search-container{
+        width:50%;
+        position:absolute;
+        left:20px;
+        top:140px;
+        margin:3%;
+        height:8%;
+        font-size:.8em;
+    }
+    
+    #home #search-container{
+        width:60%;
+        position:absolute;
+        left:20px;
+        top:35vw;
+        margin:3%;
+    }
+    
+/* BODY THINGS */
+    
+    /* Iframe */
+    
+    /* tri-divs */
+    .sub_container{
+        width:100%;
+        display:block;
+    }
+    
+    /*banner*/
+    #banner_wrapper img{
+        display:none;
+    }
+    
+    #banner_wrapper{
+        height:219px;
+        background-image: url("https://i.imgur.com/7cLQR0X.png");
+        background-repeat: no-repeat;
+        background-size:contain;
+        
+    }
+    
+    /*Items page */
+    #sort-links{
+        width:100;
+        float:none;
+    }
+    
+    .browse nav ul li::before{
+        padding:0 5px;
+    }
+    
+    .browse ul{
+        margin-bottom:5%;
     }
 }
