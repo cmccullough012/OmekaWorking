@@ -19,6 +19,7 @@
 
     <!-- JavaScripts -->
     <?php echo head_js(); ?>
+     <script type="text/javascript" src="../javascripts/script.js"></script>
         
     <script type="text/javascript">
         function toggle_visibility(id) {

@@ -3,6 +3,25 @@
 
 
 <div id = "n_wrap">
+    <div id = "hide">
+        <p id = "banner_img"><?php echo get_file_name(banner_img); ?></p>
+        <p id = "mobile_ban"><?php echo get_file_name(mobile_ban); ?></p>
+        <script> 
+            function mobileFriendly(id1, id2) {
+                var x = window.matchMedia("(max-width: 450px)");
+                var large = document.getElementById(id1).innerHTML;
+                var small = document.getElementById(id2).innerHTML;
+
+                if (x.matches) { // If media query matches
+                    document.getElementById("banner_wrapper").style.backgroundImage = 'url(../../files/theme_uploads/' + small + ')';
+                } else {
+                    document.getElementById("banner_wrapper").style.backgroundImage = 'url(../../files/theme_uploads/' + large + ')';
+                }
+            }
+            
+            mobileFriendly("banner_img", "mobile_ban");
+        </script>
+    </div>
     <div id = "n_content">
         <!-- Neatline map section -->
         <section id = "map">

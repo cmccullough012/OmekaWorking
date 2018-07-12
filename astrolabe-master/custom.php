@@ -146,6 +146,31 @@ function logo_url()
 	return $logo_url;
 }
 
+function logo_url_test()
+{
+	$logo = get_theme_option('main_logo');
+	$logo_url = $logo ? WEB_ROOT.'/files/theme_uploads/'.$logo : img('home-logo.png');
+	return $logo;
+}
+
+function logo_url_test_name(){
+    $logo = get_theme_option('main_logo');
+    rename($logo, 'Main_logo.png');
+}
+
+function get_file_name($file){
+    $name = get_theme_option($file);
+    return $name;
+}
+
+
+/* $file variable as it appears in Config.ini*/
+function rename_file($file, $new){
+    $oldName = WEB_ROOT.'/files/theme_uploads/'.logo_url_test($file);
+    $newName = WEB_ROOT.'/files/theme_uploads/'.$new;
+    rename($oldName, $newName);
+}
+
 /*
 ** Formats logot to insert 
 */
