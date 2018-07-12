@@ -531,15 +531,15 @@ section {
   }
 
   a {
-    color: #573d56;
-    color: #573d56;
+    color: #7B0D1E;
+    color: #7B0D1E;
     -webkit-transition: color 0.5s, background-color 0.5s;
     -moz-transition: color 0.5s, background-color 0.5s;
     -o-transition: color 0.5s, background-color 0.5s;
     transition: color 0.5s, background-color 0.5s;
   }
   a:visited {
-    color: #755274;
+    color: #935C61;
   }
   a:focus {
     color: #664865;
@@ -548,7 +548,7 @@ section {
     color: #664865;
   }
   a:active {
-    color: #573d56;
+    color: #7B0D1E;
   }
   a:before {
     -webkit-transition: color 0.5s;
@@ -891,13 +891,13 @@ section {
   }
   body #admin-bar li a {
     text-decoration: none;
-    color: #573d56 !important;
+    color: #7B0D1E !important;
   }
   body #admin-bar li a:link {
-    color: #573d56 !important;
+    color: #7B0D1E !important;
   }
   body #admin-bar li a:visited {
-    color: #755274 !important;
+    color: #935C61 !important;
   }
   body #admin-bar li a:hover, body #admin-bar li a:focus, body #admin-bar li a:active {
     color: #664865 !important;
@@ -1384,6 +1384,11 @@ section {
 /* EVERYTHING FROM HERE ON HAS BEEN ADDED BY @cmccullough012
 --------------------------------------------------------------*/
  
+/* ORIGINAL PURPLE: #573d56
+    VISITED LINK PURPLE:#755274
+
+    NEW RED: #7B0D1E
+    VISITED LINK RED: #935C61
 
 /* wrapper div for the content of the front page  - defines floating center section of white background*/
 #n_wrap{
@@ -1419,7 +1424,7 @@ section {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    border: 1px solid #573d56;
+    border: 1px solid #7B0D1E;
 }
 
 /* style for all text blocks and headers on homepage */
@@ -1428,11 +1433,11 @@ section {
     margin-bottom: 15px;
     margin-top:15px;
     background: #f7f6f1;
-    border:1px solid #573d56;
+    border:1px solid #7B0D1E;
 }
 
 .homepage-text h3{
-    color: #573d56; 
+    color: #7B0D1E; 
     font-variant: small-caps;
     margin-top:0;
     text-align: center;
@@ -1458,7 +1463,7 @@ section {
 /* class for images in each of the three sections */
 .n_image{
     width: 90%;
-    border:1px solid #573d56;
+    border:1px solid #7B0D1E;
     margin: 10% 10% 5% 10%;
 }
 
@@ -1491,6 +1496,7 @@ section {
 .descr h4{
     margin-top:0;
     font-size:1.5em;
+    color:#7B0D1E;
 }
 
 
@@ -1602,8 +1608,8 @@ section {
 
 /* More attractive read more button for the about section */
 .read_more_button{
-    border-top: 1px solid #573d56;
-    border-bottom: 1px solid #573d56;
+    border-top: 1px solid #7B0D1E;
+    border-bottom: 1px solid #7B0D1E;
     font-style: italic;
     width: 15%;
     margin: 5px;
@@ -1664,7 +1670,7 @@ oral_hist_wrap{
 }
 
 /* Aligns videos to a three column view */
-.oral_video_L{
+/*.oral_video_L{
     float:left;
 }
 
@@ -1675,12 +1681,13 @@ oral_hist_wrap{
 .oral_video_M{
     display:inline-block;
 }
-
+*/
 
 .oral_video_L, .oral_video_M, .oral_video_R{
     width: 33.3%; 
     position:relative;
     padding:1.5%;
+    float:left;
 
 }
 
@@ -1758,10 +1765,12 @@ section{
         left:80%;
     }
     
+    /*Condenses nav a bit */
     li::before{
         padding: 0 2px;
     }
     
+/* FOOTER -700px */
     .foot_section{
         width:100%;
     }
@@ -1829,6 +1838,7 @@ section{
         display:inline-block;
         float:none;
     }
+
     
     .descr h4{
         font-size:1em;
@@ -1843,7 +1853,8 @@ section{
    /* div[role=main]{
         margin-top:5%
     }*/
-    
+
+/* OVERVIEW THINGS - 450px */
     header[role=banner]{
         padding-bottom:11%;
         
@@ -1935,6 +1946,7 @@ section{
     #logo_wrap{
         width:60%;
         float:left;
+        padding-top:5%;
     }
     
     #home #top-nav{
@@ -1970,7 +1982,6 @@ section{
     }
     
     
-    
     #home_logo{
         width:400px;
     }
@@ -1983,7 +1994,7 @@ section{
         width:50%;
         position:absolute;
         left:20px;
-        top:140px;
+        top:33vw;
         margin:3%;
         height:8%;
         font-size:.8em;
@@ -1993,7 +2004,7 @@ section{
         width:60%;
         position:absolute;
         left:20px;
-        top:35vw;
+        top:42vw;
         margin:3%;
     }
     
