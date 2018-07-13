@@ -23,6 +23,8 @@ echo head(array(
             array('class' => 'neatline'), true
           );?>
         </h2>
+       
+        <?php echo neatline_iframe($e);?>
         <?php if ($description = snippet_by_word_count(nl_getExhibitField('narrative'), 20)) : ?>
         <div class="neatline-exhibit-description"><?php echo $description . nl_getExhibitLink($e, 'show', 'Read more.', array('class' => 'neatline'), true); ?></div>
         <?php endif; ?>

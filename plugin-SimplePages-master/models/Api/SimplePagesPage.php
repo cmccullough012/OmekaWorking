@@ -10,8 +10,6 @@ class Api_SimplePagesPage extends Omeka_Record_Api_AbstractRecordAdapter
 		    'is_published'        => (bool)$record->is_published,
 		    'title'               => $record->title,
 		    'slug'                => $record->slug,
-		    'text'                => $record->text,
-            'vid'                 => $record->vid,
 		    'updated'             => self::getDate($record->updated),
 		    'inserted'            => self::getDate($record->inserted),
 		    'order'               => $record->order,

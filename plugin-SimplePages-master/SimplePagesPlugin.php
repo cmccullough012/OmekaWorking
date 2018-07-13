@@ -43,7 +43,6 @@ class SimplePagesPlugin extends Omeka_Plugin_AbstractPlugin
           `title` tinytext COLLATE utf8_unicode_ci NOT NULL,
           `slug` tinytext COLLATE utf8_unicode_ci NOT NULL,
           `text` mediumtext COLLATE utf8_unicode_ci,
-          `vid` tinytext COLLATE utf8_unicode_ci,
           `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
           `inserted` timestamp NOT NULL DEFAULT '2000-01-01 00:00:00',
           `order` int(10) unsigned NOT NULL,

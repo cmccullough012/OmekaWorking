@@ -39,9 +39,93 @@ return html block
             }else if ($i=3){
                 $side="R";
             }
-            $html = $html.'<iframe id ="oral_vid_'.$i.'" class = "oral_vid_"'.$side.'" src = "'.$separated[($x+i)]
+            $html = $html.'<iframe id ="oral_vid_'.$i.'" class = "oral_vid_"'.$side.'" src = "'.$separated[($x+i)]"'
         }
     }
         
         
 ?>
+                
+                
+                
+                
+                
+                
+                
+<?php
+$bodyclass = 'page simple-page';
+$top = simple_pages_earliest_ancestor_page(null);
+
+// Build appropriate page titles
+if (!$top) {
+    $top = get_current_record('simple_pages_page');
+    $topSlug = metadata($top, 'slug');
+} else {
+	$title = metadata('simple_pages_page', 'title');
+	$subtitle = metadata('simple_pages_page', 'title');
+}
+echo head(array( 'title' => $title, 
+	'bodyclass' => $bodyclass, 
+	'bodyid' => metadata('simple_pages_page', 'slug'),
+	'subtitle' => $subtitle,
+	'currentUriOverride' => url($topSlug)
+));
+
+?>
+
+<h1><?php echo $pageTitle;?></h1>
+
+<p>Oral Histories page text goes here</p>
+
+<?php echo pagination_links(); ?>
+
+<?php foreach (loop('items') as $item): ?>
+<div id = "oral_videos">
+        <h2>Listen</h2>
+        <div id = "iframe_row1" class ="iframe_row">
+            <div class ="oral_video_L">  
+                <iframe width="315" height="315" class ="oral_video" src="https://www.youtube.com/embed/la3NWn7DdyQ?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <h3 class = "oral_caption">Alexena Griffin on community and neighborhood care</h3>
+            </div>
+            <div class ="oral_video_M">
+                <iframe width="315" height="315" class ="oral_video"  src="https://www.youtube.com/embed/dqlW2rG-lIQ?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <h3 class = "oral_caption">Jim Affronti on the Public Market</h3>
+            </div>
+            <div class ="oral_video_R">
+                <iframe width="315" height="315" class ="oral_video" src="https://www.youtube.com/embed/fbfaLV1s9Ho?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <h3 class = "oral_caption">Bertha Jones on planting celery</h3>
+            </div>
+        </div>
+        <div id = "iframe_row2" class ="iframe_row">
+            <div class ="oral_video_L">
+                <iframe width="315" height="315" class ="oral_video" src="https://www.youtube.com/embed/lOqNYZxXWPA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <h3 class = "oral_caption">Martin Pedraza on advocacy for community reform</h3>
+            </div>
+            <div class ="oral_video_M">
+                <iframe width="315" height="315" class ="oral_video" src="https://www.youtube.com/embed/Rywg2UZUMs8?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <h3 class = "oral_caption">Alexena Griffin on the Public Market</h3>
+            </div>
+            <div class ="oral_video_R">
+                <iframe width="315" height="315" class ="oral_video" src="https://www.youtube.com/embed/OsGVUgLwKOU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <h3 class = "oral_caption">Martin Pedraza on immigration and labor</h3>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+
+<?php echo pagination_links(); ?>
+
+<div id="outputs">
+    <span class="outputs-label"><?php echo __('Output Formats'); ?></span>
+    <?php echo output_format_list(false); ?>
+</div>
+
+<?php fire_plugin_hook('public_items_browse', array('items' => $items, 'view' => $this)); ?>
+
+<?php echo foot(); ?>
+                
+                
+                
+install this https://st3ph.github.io/jquery.easyPaginate/
+                
+reference this https://vtechworks.lib.vt.edu/handle/10919/71356

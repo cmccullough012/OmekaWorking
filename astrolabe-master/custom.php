@@ -275,4 +275,71 @@ function build_footer_social(){
     
 }
 
+function neatline_iframe($exhibit){
+    $link = nl_getExhibitUrl($exhibit, 'fullscreen', true);
+    return '<iframe src="'.$link.'" seamless="seamless" scrolling="no" frameborder = "0" class = "nl_preview"></iframe>';
+}
+
+function generate_video_mosaic($textBlock){
+    $dump = get_theme_option($textBlock);
+    $dump = str_replace(array("\r", "\n", "<br />"), '', $dump);
+    $couples = explode(';', $dump);
+    $count = 0;
+    $rowCount=1;
+    $arrayCount = count($couples);
+    
+    $html = null;
+    
+    foreach ($couples as $group){
+        $group = explode(',', $group);
+        $couples[$count] = array($group[0],$group[1]);
+        
+        $batch = generate_videos($couples[$count][0], $couples[$count][1]);
+        
+        if ($count==($arrayCount-1)){
+            if (($count%3)==0){
+                if ($count==0){
+                    $html = $html.'<div id = "iframe_row'.$rowCount.'" class ="iframe_row">'.$batch.'</div>';
+                    $rowCount++;
+                }else{
+                    $html = $html.'</div><div id = "iframe_row'.$rowCount.'" class ="iframe_row">'.$batch.'</div>';
+                    $rowCount++;
+                }
+            }else{
+                $html = $html.$batch.'</div>';
+            }
+        }else{
+            if (($count%3)==0){
+                if ($count==0){
+                    $html = $html.'<div id = "iframe_row'.$rowCount.'" class ="iframe_row">'.$batch;
+                    $rowCount++;
+                }else{
+                    $html = $html.'</div><div id = "iframe_row'.$rowCount.'" class ="iframe_row">'.$batch;
+                    $rowCount++;
+                }    
+            }else{
+                $html = $html.$batch;
+            }
+        }
+        
+        $count++;
+        
+    }
+    
+    return $html;
+    
+    
+}
+
+function generate_videos($title, $link){
+    $iframe = '<iframe width="315" height="315" class ="oral_video" src="'.$link.'?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+    $caption = '<h3 class = "oral_caption">'.$title.'</h3>';
+    return '<div class ="oral_video_">'.$iframe.$caption.'</div>';
+    
+}
+
+
+
+
+
 ?>

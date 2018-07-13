@@ -4,9 +4,14 @@ oral_hist_wrap{
 
 .iframe_row{
     width:30%;
+}
+
+.oral_video_{
+    float:left;
     padding:2%;
 }
 
+/*
 .oral_video_L{
     float:left;
 }
@@ -17,7 +22,7 @@ oral_hist_wrap{
 
 .oral_video_M{
     display:inline-block;
-}
+} */
 
 #iframe_row2{
     clear:all;

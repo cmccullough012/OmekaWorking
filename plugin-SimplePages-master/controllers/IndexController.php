@@ -110,16 +110,6 @@ class SimplePages_IndexController extends Omeka_Controller_AbstractActionControl
             )
         );
         
-        $form->addElementToEditGroup(
-            'text', 'vid',
-            array('id' => 'simple-pages-vid',
-                'label' => __('Youtube link'),
-                'description' => __(
-                    'Add a link to an oral history video hosted on youtube. (Page with slug "oral-history" only)'
-                )
-            )
-        );
-        
         
         $form->addElementToSaveGroup(
             'select', 'parent_id',
