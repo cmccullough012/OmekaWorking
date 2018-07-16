@@ -12,6 +12,6 @@ jQuery(function() {
 	jQuery('#easyPaginate').easyPaginate({
 		paginateElement: 'div',
 		elementsPerPage: 2,
-		effect: 'default'
+		effect: 'climb'
 	});
 });

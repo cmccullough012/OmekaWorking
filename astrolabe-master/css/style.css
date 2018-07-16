@@ -1602,6 +1602,11 @@ body{
     float:right;
 }
 
+#footer_social h4{
+    margin-left:4%;
+    padding-left:4%;
+}
+
 #footer_social img {
     max-width: 60px; 
     margin:2%;
@@ -1770,6 +1775,10 @@ section{
     clear:both;
     text-align:center;
 }
+
+
+/* NEATLINE STUFF */ 
+
 
 /* MEDIA QUERIES */
 @media screen and (max-width:1000px){
