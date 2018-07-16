@@ -15,20 +15,26 @@
    <?php fire_plugin_hook('public_head', array('view'=>$this)); ?>
 
     <!-- Style Sheets -->
-    <?php echo head_css(); ?>
+    <?php
+        queue_css_file('jquery.snippet.min');
+        echo head_css(); ?>
 
     <!-- JavaScripts -->
-    <?php echo head_js(); ?>
+    <?php 
+        queue_js_file('bootstrap');
+        queue_js_file('bootstrap.min');
+        queue_js_file('jquery.easyPaginate');
+        queue_js_file('jquery.snippet.min');
+        queue_js_file('scripts');
+        echo head_js(); ?>
      <script type="text/javascript" src="../javascripts/script.js"></script>
         
     <script type="text/javascript">
-        function toggle_visibility(id) {
-           var e = document.getElementById(id);
-           if(e.style.display == 'block')
-              e.style.display = 'none';
-           else
-              e.style.display = 'block';
-        }
+        jQuery.('#easyPaginate').easyPaginate({
+            paginateElement: 'img',
+            elementsPerPage: 3,
+            effect: 'climb'
+        });
     </script>
 </head>
 

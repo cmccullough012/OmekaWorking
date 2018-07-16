@@ -326,6 +326,61 @@ function generate_video_mosaic($textBlock){
         
     }
     
+    $links = pagination_links($options = array('per_page' => 5));
+    
+    return $html;
+    
+    
+}
+
+
+function generate_video_test($textBlock){
+    $dump = get_theme_option($textBlock);
+    $dump = str_replace(array("\r", "\n", "<br />"), '', $dump);
+    $couples = explode(';', $dump);
+    $count = 0;
+    $rowCount=1;
+    $arrayCount = count($couples);
+    
+    $html = null;
+    
+    foreach ($couples as $group){
+        $group = explode(',', $group);
+        $couples[$count] = array($group[0],$group[1]);
+        
+        $batch = generate_videos($couples[$count][0], $couples[$count][1]);
+        
+        if ($count==($arrayCount-1)){
+            if (($count%3)==0){
+                if ($count==0){
+                    $html = $html.'<div id = "iframe_row'.$rowCount.'" class ="iframe_row"><aside class ="oral_video_" style = "clear:both;"><iframe width="315" height="315" class ="oral_video" src="'.$couples[$count][1].'?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe><h3 class = "oral_caption">'.$couples[$count][0].'</h3></aside></div>';
+                    $rowCount++;
+                }else{
+                    $html = $html.'</div><div id = "iframe_row'.$rowCount.'" class ="iframe_row"><aside class ="oral_video_" style = "clear:both;"><iframe width="315" height="315" class ="oral_video" src="'.$couples[$count][1].'?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe><h3 class = "oral_caption">'.$couples[$count][0].'</h3></aside></div>';
+                    $rowCount++;
+                }
+            }else{
+                $html = $html.$batch.'</div>';
+            }
+        }else{
+            if (($count%3)==0){
+                if ($count==0){
+                    $html = $html.'<div id = "iframe_row'.$rowCount.'" class ="iframe_row">'.$batch;
+                    $rowCount++;
+                }else{
+                    $html = $html.'</div><div id = "iframe_row'.$rowCount.'" class ="iframe_row"><aside class ="oral_video_" style = "clear:both;"><iframe width="315" height="315" class ="oral_video" src="'.$couples[$count][1].'?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe><h3 class = "oral_caption">'.$couples[$count][0].'</h3></aside></div>';
+                    $rowCount++;
+                }    
+            }else{
+                $html = $html.$batch;
+            }
+        }
+        
+        $count++;
+        
+    }
+    
+    
     return $html;
     
     
@@ -334,7 +389,7 @@ function generate_video_mosaic($textBlock){
 function generate_videos($title, $link){
     $iframe = '<iframe width="315" height="315" class ="oral_video" src="'.$link.'?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
     $caption = '<h3 class = "oral_caption">'.$title.'</h3>';
-    return '<div class ="oral_video_">'.$iframe.$caption.'</div>';
+    return '<aside class ="oral_video_">'.$iframe.$caption.'</aside>';
     
 }
 

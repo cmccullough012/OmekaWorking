@@ -1760,6 +1760,17 @@ section{
     border: 2px solid #7B0D1E;
 }
 
+/* pagination via jQuery plugin easyPaginate for Oral History page */
+.easyPaginateNav a {
+    padding:5px;
+    text-decoration: none;
+}
+.easyPaginateNav a.current {font-weight:bold;text-decoration:underline;}
+.easyPaginateNav {
+    clear:both;
+    text-align:center;
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width:1000px){
     #n_wrap{

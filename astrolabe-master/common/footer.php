@@ -24,5 +24,7 @@
         <?php fire_plugin_hook('public_theme_footer'); ?>
 
     </footer><!-- end footer -->
+
+    <script type = "text/javascript" src = "../javascripts/paginate.js"></script>
 </body>
 </html>
