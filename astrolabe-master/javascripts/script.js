@@ -1,4 +1,4 @@
-function mobileFriendly(id1, id2) {
+function mobileFriendlyOld(id1, id2) {
     var x = window.matchMedia("(max-width: 450px)");
     var large = document.getElementById(id1).innerHTML;
     var small = document.getElementById(id2).innerHTML;
@@ -11,13 +11,23 @@ function mobileFriendly(id1, id2) {
 }
 
 
-function screenSize(x) {
-    var path = "url(../../files/theme_uploads/";
-    var close = ")"
+
+const BANNER = document.querySelector("#banner_wrapper"); 
+const mq = window.matchMedia("(max-width:450px)");
+
+
+function mobileFriendly(){
+    var large = document.querySelector("#hide #banner_img").textContent;
+    var small = document.querySelector("#hide #mobile_ban").textContent;
     
-    var largePath = path.concat(large);
-    largePath = path.concat(close);
-    
-    var smallPath = path.concat(small);
-    smallPath = path.concat(close);
+    if (x.matches){
+        var source = "url(../../files/theme_uploads/" + small + ")";
+        BANNER.style.backgroundImage = source;
+    } else {
+        var source2 = "url(../../files/theme_uploads/" + large + ")";
+        BANNER.style.backgroundImage = source2;
+    }
 }
+
+
+mq.addEventListener("matches", mobileFriendly,false);

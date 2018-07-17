@@ -26,16 +26,8 @@
         queue_js_file('jquery.easyPaginate');
         queue_js_file('jquery.snippet.min');
         queue_js_file('scripts');
+        queue_js_file('script');
         echo head_js(); ?>
-     <script type="text/javascript" src="../javascripts/script.js"></script>
-        
-    <script type="text/javascript">
-        jQuery.('#easyPaginate').easyPaginate({
-            paginateElement: 'img',
-            elementsPerPage: 3,
-            effect: 'climb'
-        });
-    </script>
 </head>
 
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
