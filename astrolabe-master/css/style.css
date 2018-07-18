@@ -1670,16 +1670,34 @@ body{
     pushes it to the left, text on the right */
 .article_photo_left{
     max-width:300px;
-    float:left;
-    margin: 3% 3% 2% 0;
     border: 10px solid white;
+}
+
+.article_photo_container_left{
+    float:left;
+    margin: 3% 3% 0 0;
+    width:300px;
+}
+
+.article_photo_container_right{
+    float:right;
+    margin: 3% 0 0 3%;
+    width:300px;
 }
 
 .article_photo_right{
     max-width:300px;
-    float:right;
-    margin: 3% 0 2% 3%;
     border: 10px solid white;
+}
+
+.article_photo_caption{
+    font-size:.7em;
+    color:dimgray;
+    font-style: italic;
+    width:90%;
+    padding-left:5%;
+    margin-top:0;
+    text-align: center;
 }
 
 #oral_article_photo{
