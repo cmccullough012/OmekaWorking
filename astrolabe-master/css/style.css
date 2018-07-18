@@ -1675,6 +1675,13 @@ body{
     border: 10px solid white;
 }
 
+.article_photo_right{
+    max-width:300px;
+    float:right;
+    margin: 3% 0 2% 3%;
+    border: 10px solid white;
+}
+
 #oral_article_photo{
     margin-top:0;
 }
@@ -1727,6 +1734,18 @@ oral_hist_wrap{
     text-align:center;
     font-size:2em;
     font-variant:small-caps;
+    margin-bottom:.2em;
+}
+
+#access_caption{
+    font-size: .8em;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    margin-top: 0;
+    padding-top: 0;
+    font-style: italic;
+    color: #7B0D1E;
 }
 
 .oral_caption{
@@ -1777,7 +1796,18 @@ section{
 }
 
 
-/* NEATLINE STUFF */ 
+/* MAP STUFF */ 
+
+.map_container a{
+    text-decoration:none;
+    font-variant: small-caps;
+}
+
+.map_iframe{
+    width:100%;
+    height:25vw;
+}
+
 
 
 /* MEDIA QUERIES */

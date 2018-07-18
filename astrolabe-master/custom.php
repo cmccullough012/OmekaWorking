@@ -280,6 +280,15 @@ function neatline_iframe($exhibit){
     return '<iframe src="'.$link.'" seamless="seamless" scrolling="no" frameborder = "0" class = "nl_preview"></iframe>';
 }
 
+/*
+    Takes in $textBlock of titles and urls, 
+    splits into paired title/url groups at semicolons
+    splits into individual pieces at commas 
+    puts everything into a 2D array
+    HTML formats a block of iframes for each video in the array
+    in rows of 3 
+
+*/
 function generate_video_mosaic($textBlock){
     $dump = get_theme_option($textBlock);
     $dump = str_replace(array("\r", "\n", "<br />"), '', $dump);
@@ -326,65 +335,14 @@ function generate_video_mosaic($textBlock){
         
     }
     
-    $links = pagination_links($options = array('per_page' => 5));
-    
     return $html;
     
     
 }
 
-
-function generate_video_test($textBlock){
-    $dump = get_theme_option($textBlock);
-    $dump = str_replace(array("\r", "\n", "<br />"), '', $dump);
-    $couples = explode(';', $dump);
-    $count = 0;
-    $rowCount=1;
-    $arrayCount = count($couples);
-    
-    $html = null;
-    
-    foreach ($couples as $group){
-        $group = explode(',', $group);
-        $couples[$count] = array($group[0],$group[1]);
-        
-        $batch = generate_videos($couples[$count][0], $couples[$count][1]);
-        
-        if ($count==($arrayCount-1)){
-            if (($count%3)==0){
-                if ($count==0){
-                    $html = $html.'<div id = "iframe_row'.$rowCount.'" class ="iframe_row"><aside class ="oral_video_" style = "clear:both;"><iframe width="315" height="315" class ="oral_video" src="'.$couples[$count][1].'?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe><h3 class = "oral_caption">'.$couples[$count][0].'</h3></aside></div>';
-                    $rowCount++;
-                }else{
-                    $html = $html.'</div><div id = "iframe_row'.$rowCount.'" class ="iframe_row"><aside class ="oral_video_" style = "clear:both;"><iframe width="315" height="315" class ="oral_video" src="'.$couples[$count][1].'?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe><h3 class = "oral_caption">'.$couples[$count][0].'</h3></aside></div>';
-                    $rowCount++;
-                }
-            }else{
-                $html = $html.$batch.'</div>';
-            }
-        }else{
-            if (($count%3)==0){
-                if ($count==0){
-                    $html = $html.'<div id = "iframe_row'.$rowCount.'" class ="iframe_row">'.$batch;
-                    $rowCount++;
-                }else{
-                    $html = $html.'</div><div id = "iframe_row'.$rowCount.'" class ="iframe_row"><aside class ="oral_video_" style = "clear:both;"><iframe width="315" height="315" class ="oral_video" src="'.$couples[$count][1].'?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe><h3 class = "oral_caption">'.$couples[$count][0].'</h3></aside></div>';
-                    $rowCount++;
-                }    
-            }else{
-                $html = $html.$batch;
-            }
-        }
-        
-        $count++;
-        
-    }
-    
-    
-    return $html;
-    
-    
-}
+/*
+    Generates the HTML container for titles and links to videos
+*/
 
 function generate_videos($title, $link){
     $iframe = '<iframe width="315" height="315" class ="oral_video" src="'.$link.'?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
@@ -393,6 +351,36 @@ function generate_videos($title, $link){
     
 }
 
+function generate_map($title, $link){
+    $heading = '<a href = "'.$link.'" target = "_blank" ><h2 class = "map_heading">'.$title.'</h2></a>';
+    $iframe = '<iframe src="'.$link.'" seamless="seamless" scrolling="no" frameborder = "0" class = "map_iframe"></iframe>';
+    return '<div class = "map_container">'.$heading.$iframe.'</div>';
+}
+
+
+function generate_map_mosaic($textBlock){
+    $dump = get_theme_option($textBlock);
+    $dump = str_replace(array("\r", "\n", "<br />"), '', $dump);
+    $couples = explode(';', $dump);
+    $count = 0;
+    
+    $html = null;
+    
+    foreach ($couples as $group){
+        $group = explode(',', $group);
+        $couples[$count] = array($group[0],$group[1]);
+        
+        $batch = generate_map($couples[$count][0], $couples[$count][1]);
+        
+        $html = $html.$batch;
+        
+        $count++;
+        
+    }
+    
+    return $html;
+    
+}
 
 
 

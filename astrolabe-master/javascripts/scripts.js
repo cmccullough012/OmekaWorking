@@ -14,4 +14,10 @@ jQuery(function() {
 		elementsPerPage: 2,
 		effect: 'climb'
 	});
+    
+    jQuery('#easyPaginateMaps').easyPaginate({
+		paginateElement: 'div',
+		elementsPerPage: 4,
+		effect: 'climb'
+	});
 });
