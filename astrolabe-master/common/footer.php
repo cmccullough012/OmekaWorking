@@ -25,5 +25,5 @@
 
     </footer><!-- end footer -->
 </body>
-<script src = "../javascripts/script.js"></script>
+
 </html>

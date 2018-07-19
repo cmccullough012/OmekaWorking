@@ -33,8 +33,26 @@
         </section>
         <!-- Banner portal into another exhibit or simple page -->
         <section id = "banner_wrapper">
-            <?php echo build_banner(); ?>
+            <?php echo build_banner("banner_img"); ?>
         </section>
+        <script>
+            const BANNER = document.querySelector("#banner_wrapper"); 
+            const x = window.matchMedia("(max-width:450px)");
+            var large = document.querySelector("#hide #banner_img").innerHTML;
+            var small = document.querySelector("#hide #mobile_ban").innerHTML;
+            
+                if (x.matches){
+                    var source = 'url("../../files/theme_uploads/' + small + '")';
+                    BANNER.style.backgroundImage = source;
+                    console.log("Match!");
+                } else{
+                    var source2 = 'url("../../files/theme_uploads/' + large + '")';
+                    BANNER.style.backgroundImage = source2;
+                    console.log("Doesn't match");
+                }
+            
+        
+        </script>
         <!-- About text section -->
         <section id = "about">
             <?php echo home_about(); ?>

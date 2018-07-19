@@ -35,10 +35,12 @@ mq.addEventListener("matches", mobileFriendly,false);
 */
 
 const BANNER = document.querySelector("#banner_wrapper"); 
-const mq = window.matchMedia("(max-width:450px)");
+const x = window.matchMedia("(max-width:450px)");
+
+/* 
 var large = document.querySelector("#hide #banner_img").textContent;
 var small = document.querySelector("#hide #mobile_ban").textContent;
-    
+   
     if (x.matches){
         var source = 'url("../../files/theme_uploads/"' + small + '")';
         BANNER.style.backgroundImage = source;
@@ -48,3 +50,15 @@ var small = document.querySelector("#hide #mobile_ban").textContent;
         BANNER.style.backgroundImage = source2;
         console.log(source2);
     }
+*/
+
+var large = document.querySelector("#hide #banner_img").innerHTML;
+var small = document.querySelector("#hide #mobile_ban").innerHTML;
+
+if (x.matches){
+    BANNER.innerHTML = '<?php echo build_banner("mobile_ban"); ?>';
+    console.log("Match!");
+} else{
+    BANNER.innerHTML = '<?php echo build_banner("banner_img"); ?>';
+    console.log("Doesn't match");
+}
