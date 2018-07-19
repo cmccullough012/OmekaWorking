@@ -26,6 +26,7 @@
         queue_js_file('jquery.easyPaginate');
         queue_js_file('jquery.snippet.min');
         queue_js_file('scripts');
+        queue_js_file('script');
         echo head_js(); ?>
 </head>
 
