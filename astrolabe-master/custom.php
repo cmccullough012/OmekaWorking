@@ -135,6 +135,10 @@ function build_banner(){
     return $bannerText;
 }
 
+function build_banner_section(){
+    $bannerText = '<a href ="'.get_theme_option('banner_url').'"/><section id = "banner_wrapper" aria-label = "'.get_theme_option('banner_alt').'"></section></a>';
+    return $bannerText;
+}
 
 /*
 ** Formats logo url after uploading

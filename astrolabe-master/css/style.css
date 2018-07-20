@@ -1422,7 +1422,7 @@ body{
 } 
 
 /* div content inside white wrapper */
-#n_content{
+#content{
     clear: both;
     padding-bottom: 21px;
     float: left;
@@ -1560,6 +1560,14 @@ body{
 
 #nav_icon img{
     max-width:85px;
+}
+
+#banner_wrapper{
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position:center;
+    height:20vw;
+    width:100%;
 }
 
 /* sets the width of each of the four foot sections */
@@ -2124,7 +2132,6 @@ section{
     
     #banner_wrapper{
         height:219px;
-
         background-repeat: no-repeat;
         background-size:contain;
         

@@ -8,7 +8,7 @@
         <p id = "banner_img"><?php echo get_file_name(banner_img); ?></p>
         <p id = "mobile_ban"><?php echo get_file_name(mobile_ban); ?></p>
     </div>
-    <div id = "n_content">
+    <div id = "content">
         <!-- Neatline map section -->
         <section id = "map">
             <div id = "n_map_container">
@@ -32,9 +32,7 @@
             </aside>
         </section>
         <!-- Banner portal into another exhibit or simple page -->
-        <section id = "banner_wrapper">
-            <?php echo build_banner(); ?>
-        </section>
+            <?php echo build_banner_section(); ?>
         <script>
             const BANNER = document.querySelector("#banner_wrapper"); 
             const x = window.matchMedia("(max-width:450px)");
