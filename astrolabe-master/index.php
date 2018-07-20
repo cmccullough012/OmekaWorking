@@ -33,7 +33,7 @@
         </section>
         <!-- Banner portal into another exhibit or simple page -->
         <section id = "banner_wrapper">
-            <?php echo build_banner("banner_img"); ?>
+            <?php echo build_banner(); ?>
         </section>
         <script>
             const BANNER = document.querySelector("#banner_wrapper"); 
