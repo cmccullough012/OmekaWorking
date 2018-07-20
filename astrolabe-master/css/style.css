@@ -1433,20 +1433,36 @@ body{
 /* establishing map dimensions */
 #n_map_container{
     width: 100%;
+    height:100%
+}
+
+#map_home{
     height: 25em;
 }
 
-#neatline_home{
-    height:inherit;
-}
-
 /* actual iframe holding neatline map */
-#neatline_iframe_home{
+#map_iframe_home{
     width: 100%;
     height: 100%;
     overflow: hidden;
     border: 1px solid #7B0D1E;
 }
+
+#mobile_map{
+    border: 1px solid #7B0D1E;
+}
+
+#mobile_map_home{
+    display:none;
+}
+
+#mobile_map_caption{
+    font-style: italic;
+    font-size:.8em;
+    text-align: center;
+    margin:0;
+}
+
 
 /* style for all text blocks and headers on homepage */
 .homepage-text{
@@ -1455,6 +1471,10 @@ body{
     margin-top:15px;
     background: #f7f6f1;
     border:1px solid #7B0D1E;
+}
+
+#homepage-text-mobile{
+    display:none;
 }
 
 .homepage-text h3{
@@ -1568,6 +1588,10 @@ body{
     background-position:center;
     height:20vw;
     width:100%;
+}
+
+#front_banner_mobile{
+    display:none;
 }
 
 /* sets the width of each of the four foot sections */
@@ -1822,7 +1846,7 @@ section{
 }
 
 
-/* MAP STUFF */ 
+/* MAP PAGE STUFF */ 
 
 .map_container a{
     text-decoration:none;
@@ -1832,6 +1856,10 @@ section{
 .map_iframe{
     width:100%;
     height:25vw;
+}
+
+#maps-primary-mobile{
+    display:none;
 }
 
 
@@ -2121,6 +2149,14 @@ section{
     
     /* Iframe */
     
+    #mobile_map_home{
+        display:block;
+    }
+    
+    #map_home{
+        display:none;
+    }
+    
     /* tri-divs */
     .sub_container{
         width:100%;
@@ -2137,6 +2173,28 @@ section{
         
     }
     
+    #front_banner{
+        display:none;
+    }
+    
+    #front_banner_mobile{
+        display:block;
+    }
+    
+    /*about section */ 
+    #homepage-text{
+        display:none;
+    }
+    
+    #homepage-text-mobile{
+        display:block;
+    }
+    
+    .read_more_button{
+        width:40%;
+        left:60%;
+    }
+    
     /*Items page */
     #sort-links{
         width:100;
@@ -2149,5 +2207,14 @@ section{
     
     .browse ul{
         margin-bottom:5%;
+    }
+    
+    /*Maps page*/
+    #maps-primary{
+        display:none;
+    }
+    
+    #maps-primary-mobile{
+        display:block;
     }
 }

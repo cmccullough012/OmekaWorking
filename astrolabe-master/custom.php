@@ -20,7 +20,7 @@ function read_more_button($link, $button_id, $button_text){
 
 
 function home_about(){
-    $text = '<div class="homepage-text"><h3 id = "About_head">About</h3><p id = "n_about_text">'.get_theme_option('about').'</p>'.read_more_button('http://rochestercommunitymemory.com/about', 'About_read_more', 'Read more').'</div>';
+    $text = '<div class="homepage-text" id = "homepage-text"><h3 id = "About_head">About</h3><p id = "n_about_text">'.get_theme_option('about').'</p>'.read_more_button('http://rochestercommunitymemory.com/about', 'About_read_more', 'Read more').'</div><div class="homepage-text" id = "homepage-text-mobile"><h3 id = "About_head">About</h3><p id = "m_about_text">'.get_theme_option('mobile_about').'</p>'.read_more_button('http://rochestercommunitymemory.com/about', 'About_read_more', 'Read more').'</div>';
     return $text;
 }
                 
@@ -74,15 +74,22 @@ function media_home($class="", $max=3){
 }
 
 /*
-** Inserts an iframe for the Neatline map on homepage 
+** Inserts an iframe for the map on homepage 
 */
 
-function neatline_home(){
-    $neatline = get_theme_option('neatline_home');
-    if (!empty($neatline)){
-        return '<iframe src="'.$neatline.'" seamless="seamless" scrolling="no" frameborder = "0" id = "neatline_iframe_home"></iframe>';
+function map_home(){
+    $map = get_theme_option('map_home');
+    if (!empty($map)){
+        return '<div id = "map_home"><iframe src="'.$map.'" seamless="seamless" scrolling="no" frameborder = "0" id = "map_iframe_home"></iframe></div><div id = "mobile_map_home"><img src ="'.image_url('mobile_map', 'mobile_map').'" id = "mobile_map"/><p id = "mobile_map_caption">For an interactive map, please visit our desktop site.</p></div>';
     } 
 }
+
+/* neatline browse page */ 
+function neatline_iframe($exhibit){
+    $link = nl_getExhibitUrl($exhibit, 'fullscreen', true);
+    return '<iframe src="'.$link.'" seamless="seamless" scrolling="no" frameborder = "0" class = "nl_preview"></iframe>';
+}
+
 
 /*
 ** Formats exhibit title for the three featured exhibits
@@ -131,14 +138,14 @@ function build_exhibit($exhibitNumber){
 ** and the link to the banner image 
 */
 function build_banner(){
-    $bannerText = '<a href ="'.get_theme_option('banner_url').'"/><img src = "'.image_url('banner_img', 'banner_home').'" id = "front_banner" alt = "'.get_theme_option('banner_alt').'"/></a>';
+    $bannerText = '<a href ="'.get_theme_option('banner_url').'"/><img src = "'.image_url('banner_img', 'banner_home').'" id = "front_banner" alt = "'.get_theme_option('banner_alt').'"/><img src = "'.image_url('mobile_ban', 'banner_home_mobile').'" id = "front_banner_mobile" alt = "'.get_theme_option('banner_alt').'"/></a>';
     return $bannerText;
 }
-
+/*
 function build_banner_section(){
     $bannerText = '<a href ="'.get_theme_option('banner_url').'"/><section id = "banner_wrapper" aria-label = "'.get_theme_option('banner_alt').'"></section></a>';
     return $bannerText;
-}
+}*/
 
 /*
 ** Formats logo url after uploading
@@ -279,10 +286,7 @@ function build_footer_social(){
     
 }
 
-function neatline_iframe($exhibit){
-    $link = nl_getExhibitUrl($exhibit, 'fullscreen', true);
-    return '<iframe src="'.$link.'" seamless="seamless" scrolling="no" frameborder = "0" class = "nl_preview"></iframe>';
-}
+
 
 /*
     Takes in $textBlock of titles and urls, 
