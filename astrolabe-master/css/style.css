@@ -1391,6 +1391,11 @@ section {
     NEW RED: #7B0D1E
     VISITED LINK RED: #935C61 */
 
+a:focus{
+    box-shadow: 0 0 5px #8cb7f1;
+/*    border: 1px solid #8cb7f1;*/
+}
+
 h1, h2 {
     font-family:'Montserrat', sans-serif;
     font-weight:500;
