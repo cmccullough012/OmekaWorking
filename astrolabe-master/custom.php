@@ -117,7 +117,8 @@ function exhibit_link($exhibitNumber){
 */
 function exhibit_img($exhibitNumber){
     $option = 'ex_img_'.$exhibitNumber;
-    $img = '<img src="'.image_url($option, $option).'" id ="exhibit'.$exhibitNumber.'" class = "n_image" alt = "'.exhibit_title($exhibitNumber).'"/>';
+    $alt = 'ex_alt_'.$exhibitNumber;
+    $img = '<img src="'.image_url($option, $option).'" id ="exhibit'.$exhibitNumber.'" class = "n_image" alt = "'.get_theme_option($alt).'"/>';
     return $img;
 }
 
@@ -375,7 +376,7 @@ function generate_map_mosaic($textBlock){
     $html = null;
     
     foreach ($couples as $group){
-        $group = explode(',', $group);
+        $group = explode(',,', $group);
         $couples[$count] = array($group[0],$group[1]);
         
         $batch = generate_map($couples[$count][0], $couples[$count][1]);
