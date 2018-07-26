@@ -32,7 +32,7 @@
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
     <header role="banner">
-
+        <a href = "#content"><img id = "skip" alt = "Skip to main content" src = "../images/skip.png" style = "visibility:hidden;" tabindex="-1"></a>
         <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
         <div id = "head_wrap">
             <!-- a div to hold the logo and title -->
