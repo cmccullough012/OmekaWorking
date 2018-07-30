@@ -20,7 +20,7 @@ echo head(array( 'title' => $title,
 // If there is a file that matches the slug of this page, display that as the template
 // Otherwise, use the template below on show.php
 $fname = dirname(__FILE__) . '/' . metadata('simple_pages_page', 'slug') . '.php';
-if (is_file( $fname )):
+if (is_file( $fname ) || (strpos($fname,'juxtapose'))):
     include( $fname );
 else :
 
