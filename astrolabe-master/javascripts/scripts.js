@@ -17,7 +17,7 @@ jQuery(function() {
     
     jQuery('#easyPaginateMaps').easyPaginate({
 		paginateElement: 'div',
-		elementsPerPage: 4,
+		elementsPerPage: 3,
 		effect: 'climb'
 	});
 });

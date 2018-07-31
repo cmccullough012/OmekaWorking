@@ -309,7 +309,7 @@ function generate_video_mosaic($textBlock){
     $html = null;
     
     foreach ($couples as $group){
-        $group = explode(',', $group);
+        $group = explode(',,', $group);
         $couples[$count] = array($group[0],$group[1]);
         
         $batch = generate_videos($couples[$count][0], $couples[$count][1]);
