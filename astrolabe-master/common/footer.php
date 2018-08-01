@@ -22,7 +22,8 @@
         </div>
 
         <?php fire_plugin_hook('public_theme_footer'); ?>
-
+        <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
     </footer><!-- end footer -->
 </body>
 

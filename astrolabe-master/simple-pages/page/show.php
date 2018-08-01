@@ -1,8 +1,7 @@
 <?php 
 $bodyclass = 'page simple-page';
 $top = simple_pages_earliest_ancestor_page(null);
-
-// Build appropriate page titles
+ // Build appropriate page titles
 if (!$top) {
     $top = get_current_record('simple_pages_page');
     $topSlug = metadata($top, 'slug');
@@ -16,21 +15,18 @@ echo head(array( 'title' => $title,
 	'subtitle' => $subtitle,
 	'currentUriOverride' => url($topSlug)
 ));
-
-// If there is a file that matches the slug of this page, display that as the template
+ // If there is a file that matches the slug of this page, display that as the template
 // Otherwise, use the template below on show.php
 $fname = dirname(__FILE__) . '/' . metadata('simple_pages_page', 'slug') . '.php';
-if (is_file( $fname ) || (strpos($fname,'juxtapose'))):
+if (is_file( $fname )):
     include( $fname );
 else :
-
-    
+     
     $bodyclass = 'page simple-page';
     if ($is_home_page):
         $bodyclass .= ' simple-page-home';
     endif; ?>
-
-    <div id="primary">
+     <div id="primary">
         <?php if (!$is_home_page): ?>
         <p id="simple-pages-breadcrumbs"><?php echo simple_pages_display_breadcrumbs(); ?></p>
         <h1><?php echo metadata('simple_pages_page', 'title'); ?></h1>
@@ -40,7 +36,5 @@ else :
         echo $this->shortcodes($text);
         ?>
     </div>
-
-
-<?php endif;
-echo foot(); ?>
+ <?php endif;
+echo foot(); ?> 
