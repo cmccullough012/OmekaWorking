@@ -1867,9 +1867,14 @@ section{
     display:none;
 }
 
+.juxtapose{
+    width:80% !important;
+    margin-left:10%;
+    margin-right:10%:
+}
 
 
-/* MEDIA QUERIES */
+/* ------------------- MEDIA QUERIES ------------------------ */
 @media screen and (max-width:1000px){
     #n_wrap{
         overflow: hidden;
