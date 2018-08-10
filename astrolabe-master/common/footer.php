@@ -22,13 +22,21 @@
         </div>
 
         <?php fire_plugin_hook('public_theme_footer'); ?>
+        
+        <!-- Juxtapose resources -->
         <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
         <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+        
+        <!-- Soundcite resources-->
         <link href='https://cdn.knightlab.com/libs/soundcite/latest/css/player.css' rel='stylesheet' type='text/css'>
         <script type='text/javascript' src='https://cdn.knightlab.com/libs/soundcite/latest/js/soundcite.min.js'></script>
+        
+        <!--install JQuery for the next script on Juxtapose -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-  crossorigin="anonymous"></script>
+                integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+                crossorigin="anonymous"></script>
+        
+        <!-- Makes juxtapose frames responsive -->
         <script>
             var $juxtapose = $('.juxtapose');
 

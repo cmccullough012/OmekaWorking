@@ -1817,7 +1817,7 @@ oral_hist_wrap{
 
 
 
-/* a little extra room on exhibits browse description section*/
+/* a little extra room on Exhibits>browse description section*/
 .browse_description{
     margin-bottom: 3%;
     margin-left:3%;
@@ -1839,7 +1839,7 @@ section{
     border: 2px solid #7B0D1E;
 }
 
-/* pagination via jQuery plugin easyPaginate for Oral History page */
+/* pagination via jQuery plugin easyPaginate for Oral History and maps page */
 .easyPaginateNav a {
     padding:5px;
     text-decoration: none;
@@ -1851,7 +1851,7 @@ section{
 }
 
 
-/* MAP PAGE STUFF */ 
+/* MAP PAGE */ 
 
 .map_container a{
     text-decoration:none;
@@ -1867,6 +1867,7 @@ section{
     display:none;
 }
 
+/*Juxtapose then and now slider size */ 
 .juxtapose{
     width:80% !important;
     margin-left:10%;
