@@ -267,15 +267,15 @@ function build_footer_social(){
     $title = '<h4>Follow Us</h4>';
 
     if (!empty($twitter_url)){
-        $twitter = '<a href = "'.$twitter_url.'"><img src = "https://i.imgur.com/GzurvMk.png" id = "twitter" alt = "twitter" /></a>';
+        $twitter = '<a href = "'.$twitter_url.'"><img src = "http://www.rochestercommunitymemory.com/files/original/74b85d88aab80c6226f0b27cc81a7add.png" id = "twitter" alt = "twitter" /></a>';
     }
     
     if (!empty($youtube_url)){
-        $youtube = '<a href = "'.$youtube_url.'"><img src = "https://i.imgur.com/367xSxZ.png" id = "youtube" alt = "youtube" /></a>';
+        $youtube = '<a href = "'.$youtube_url.'"><img src = "http://www.rochestercommunitymemory.com/files/original/b6529d01bb8b723d406cb5ed5030b179.png" id = "youtube" alt = "youtube" /></a>';
     }
     
     if (!empty($facebook_url)){
-        $facebook = '<a href = "'.$faceboook_url.'"><img src = "https://i.imgur.com/nzHDRdv.png" id = "facebook" alt = "facebook" /></a>';
+        $facebook = '<a href = "'.$faceboook_url.'"><img src = "http://www.rochestercommunitymemory.com/files/original/44587117d53d392342695e86b9185ba5.png" id = "facebook" alt = "facebook" /></a>';
     }
     
     if (empty($twitter) && empty($youtube) && empty($facebook)){
