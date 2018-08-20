@@ -1,7 +1,7 @@
 
 <div><img src="http://www.rochestercommunitymemory.com/files/original/53193332a114a49864a3c9cd82211ef5.jpg" class="exhibit_banner" id="mh_banner" /></div>
 <div>
-<p>Located in the Northeast section of Rochester, Marketview Heights offers a remarkable reflection of <span id = "soundciteSpan"><span class="soundcite" data-url="http://rochestercommunitymemory.com/files/original/1cc1e2d77dc77d97a2432b5d7dc81a18.mp3" data-start="0" data-end="45000" data-plays="1">Rochester’s past and present.</span></span> Dating back to the 19th century, the area was a center of the region’s development, first with flour mills along the Genesee River and later with industrial development, including a vibrant garment industry. Marketview Heights grew steadily after the Erie Canal opened and waves of new settlers, particularly from New England, moved to Rochester. By the early twentieth century, the area reflected a steady wave of European immigrants, including those from Germany, Poland, Ukraine, and Italy. Italian immigrants comprised a large percentage of neighborhood families and they worked in various trades, including the garment industry. By the 1940s and 1950s, African American and Latino families ascended in both the neighborhood and city.</p>
+<p>Located in the Northeast section of Rochester, Marketview Heights offers a remarkable reflection of <span id = "soundciteSpan1"><span class="soundcite" data-url="http://rochestercommunitymemory.com/files/original/1cc1e2d77dc77d97a2432b5d7dc81a18.mp3" data-start="0" data-end="45000" data-plays="1">Rochester’s past and present.</span></span> Dating back to the 19th century, the area was a center of the region’s development, first with flour mills along the Genesee River and later with industrial development, including a vibrant garment industry. Marketview Heights grew steadily after the Erie Canal opened and waves of new settlers, particularly from New England, moved to Rochester. By the early twentieth century, the area reflected a steady wave of European immigrants, including those from Germany, Poland, Ukraine, and Italy. Italian immigrants comprised a large percentage of neighborhood families and they worked in various trades, including the garment industry. By the 1940s and 1950s, African American and Latino families ascended in both the neighborhood and city.</p>
 <p>By the 1990s, economic and industrial fortunes declined in Marketview Heights. By this time, many of the larger industrial employers had either left the city, drastically reduced operations or had ceased all together.</p>
 <p></p>
 <p>Economically, the once vibrant neighborhood has struggled recently, with roughly 75% of the population making less than $35,000 per year. Today the area remains ethnically and racially diverse: roughly 20 % of the population is white, 50% is Black, and 30% is Latino. (There is also a growing Southeast Asian population.) Though it played a key role in Rochester’s industrial and urban growth – particularly in the garment trades — Marketview Heights is now often at the edge of a revitalizing local economy trying to navigate a range of complex issues, including new immigration patterns, political representation in city and metropolitan political debates, the fate of community redevelopment projects, and the meaning of area history and memory in a new global era emphasizing change.</p>
@@ -20,7 +20,7 @@
         <button id = "no_btn">No</button>
     </div>
 </div>
-<div id="myModal" class="modal">
+<div id="modalDiv" class="modal">
 
   <!-- Modal content -->
   <div class="modal-content">
@@ -28,7 +28,7 @@
       <span class="close">&times;</span>
       <h2>Transcript</h2>
     </div>
-    <div class="modal-body">
+    <div class="modal-body" id = "transcript1">
       <p>It’s certainly [do] its history. I think you learn as much about the city of Rochester, county of Monroe, from this little corner of it as you would from some of the more covered areas and more well known neighborhoods. You know, I think it is, in many ways, the Ellis island of Rochester. It had two settlement houses within five blocks of each other, basically, and it was a gateway neighborhood for wave after wave of immigrants both from outside the country and from within. I mean, this is, I guess they call it the Great Migration where African Americans were coming up from the south and this was one of the neighborhoods that was welcoming to them. This  was the Ellis island; it sounds crazy to say in the same country, but basically, that’s what the function was. </p>
       <p style = "text-align:right;">-Rich Holowka</p>
     </div>
