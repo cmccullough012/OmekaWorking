@@ -1867,6 +1867,10 @@ section{
     display:none;
 }
 
+#oral-mobile{
+    display:none;
+}
+
 /*Juxtapose then and now slider size */ 
 .juxtapose{
     width:80% !important;
@@ -2146,11 +2150,16 @@ section{
         font-size:1em;
     }
     
+    #access_caption{
+        width:100%;
+        margin-left:0;
+        font-size:.9em;
+    }
 
 
 }
 
-@media screen and (max-width:450px){
+@media screen and (max-width:480px){
     
    /* div[role=main]{
         margin-top:5%
@@ -2381,5 +2390,17 @@ section{
     
     #maps-primary-mobile{
         display:block;
+    }
+    
+    #oral-histories-primary{
+        display:none;
+    }
+    
+    #oral-mobile{
+        display:block;
+    }
+    
+    #oral_videos{
+        display:none;
     }
 }
