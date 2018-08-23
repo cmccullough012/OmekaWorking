@@ -22,9 +22,9 @@
         </div>
 
         <?php fire_plugin_hook('public_theme_footer'); ?>
+        <?php echo js_tag('soundcite'); echo js_tag('script') ?>
         
-        <!-- Javascripts -->
-        <?php echo js_tag('script');?>
+      
         
         <!-- Juxtapose resources -->
         <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
@@ -35,11 +35,11 @@
         <script type='text/javascript' src='https://cdn.knightlab.com/libs/soundcite/latest/js/soundcite.min.js'></script>
         
         <!--install JQuery for the next script on Juxtapose -->
-        <!-- for some reason this broke the easy paginate plugin, and without it, juxtapose sitll seems to be working so 
+        <!-- for some reason this broke the easy paginate plugin, and without it, juxtapose sitll seems to be working so -->
                         
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                 integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-                crossorigin="anonymous"></script>-->
+                crossorigin="anonymous"></script>
 
     </footer><!-- end footer -->
 </body>
