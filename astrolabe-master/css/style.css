@@ -1703,8 +1703,7 @@ body{
     display:none;
 }
 
-/* Formats any small photo or video inserted into a summary/simple page/etc
-    pushes it to the left, text on the right */
+/* Formats any small photo or video inserted into a summary/simple page/etc. pushes it to the left, text on the right or vice versa */
 .article_photo_left{
     max-width:300px;
     border: 10px solid white;
@@ -1737,6 +1736,7 @@ body{
     text-align: center;
 }
 
+/* Specifically the photo/video on oral histories page */
 #oral_article_photo{
     margin-top:0;
 }
@@ -1863,6 +1863,8 @@ section{
     height:25vw;
 }
 
+/* on desktop view, hide the paragraph asking the user to view on desktop on maps and oral histories mobile page*/
+
 #maps-primary-mobile{
     display:none;
 }
@@ -1913,6 +1915,7 @@ section{
     animation-duration: 0.4s
 }
 
+/* The first pop up asking if they'd like to see the transcript*/
 #question{
     padding: 2px 16px;
     background-color: #7b0d1e;
@@ -1937,6 +1940,7 @@ section{
     background:none;
 }
 
+/* The line saying they don't want to see trancripts anymore*/
 #stop{
     text-align:left;
     color: white;
@@ -1991,11 +1995,11 @@ section{
     margin-left:10%;
     margin-right:10%;
     line-height:1.5em;
-    }
+}
 
-    .modal-body p{
-        margin:.5;
-    }    
+.modal-body p{
+    margin:.5;
+}    
     
 .modal-footer {
     padding: 2px 16px;
@@ -2011,7 +2015,7 @@ section{
         bottom:5px;
     }
 
-/* Add Animation */
+/* Add Animation to modal */
 @-webkit-keyframes slideIn {
     from {bottom: -300px; opacity: 0} 
     to {bottom: 0; opacity: 1}

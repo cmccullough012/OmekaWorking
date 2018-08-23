@@ -18,13 +18,14 @@ function read_more_button($link, $button_id, $button_text){
     return $read_more;
 }
 
-
+/* Formats the homepage's about section, for desktop and for mobile.
+*/
 function home_about(){
     $text = '<div class="homepage-text" id = "homepage-text"><h3 id = "About_head">About</h3><p id = "n_about_text">'.get_theme_option('about').'</p>'.read_more_button('http://rochestercommunitymemory.com/about', 'About_read_more', 'Read more').'</div><div class="homepage-text" id = "homepage-text-mobile"><h3 id = "About_head">About</h3><p id = "m_about_text">'.get_theme_option('mobile_about').'</p>'.read_more_button('http://rochestercommunitymemory.com/about', 'About_read_more', 'Read more').'</div>';
     return $text;
 }
                 
-
+/* Formats the featured text area under the homepagemap - the heading and body*/
 function featured_text(){
     $text = '<div id="featured-text" class = "homepage-text"><h3 id = "Featured_head">'.get_theme_option('text_heading').'</h3><p id = featured_text_body>'.get_theme_option('text_area').'</p></div>';
     return $text;
@@ -32,7 +33,7 @@ function featured_text(){
 
 
 /*
-** Logo URL
+** Find the URL on the server of the logo file (omeka assigns nonsense file names)
 */
 function home_logo_url()
 {
@@ -142,11 +143,7 @@ function build_banner(){
     $bannerText = '<a href ="'.get_theme_option('banner_url').'"/><img src = "'.image_url('banner_img', 'banner_home').'" id = "front_banner" alt = "'.get_theme_option('banner_alt').'"/><img src = "'.image_url('mobile_ban', 'banner_home_mobile').'" id = "front_banner_mobile" alt = "'.get_theme_option('banner_alt').'"/></a>';
     return $bannerText;
 }
-/*
-function build_banner_section(){
-    $bannerText = '<a href ="'.get_theme_option('banner_url').'"/><section id = "banner_wrapper" aria-label = "'.get_theme_option('banner_alt').'"></section></a>';
-    return $bannerText;
-}*/
+
 
 /*
 ** Formats logo url after uploading
@@ -214,12 +211,6 @@ function build_footer_text(){
 }
 
 
-/*function logo_variable_url($upload, $name)
-{
-	$logo = get_theme_option($upload);
-	$logo_url = $logo ? WEB_ROOT.'/files/theme_uploads/'.$logo : img($name);
-	return $logo_url;
-} */
 
 /*
 ** Generates a URL and stores file locally for any image
@@ -367,6 +358,15 @@ function generate_map($title, $link){
 }
 
 
+/*
+    Takes in $textBlock of titles and urls, 
+    splits into paired title/url groups at semicolons
+    splits into individual pieces at commas 
+    puts everything into a 2D array
+    HTML formats a block of iframes for each map in the array
+    in rows of 3 
+
+*/
 function generate_map_mosaic($textBlock){
     $dump = get_theme_option($textBlock);
     $dump = str_replace(array("\r", "\n", "<br />"), '', $dump);

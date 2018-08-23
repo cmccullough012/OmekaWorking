@@ -5,12 +5,10 @@
 
 <div id = "n_wrap">
     <div id = "content">
-        <!-- Neatline map section -->
+        <!-- Map section -->
         <section id = "map">
             <div id = "n_map_container">
-                
                     <?php echo map_home(); ?>
-                
             </div>
             <!-- Text underneath map -->
             <?php echo featured_text(); ?>

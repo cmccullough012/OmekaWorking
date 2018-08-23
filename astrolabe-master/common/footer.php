@@ -22,6 +22,8 @@
         </div>
 
         <?php fire_plugin_hook('public_theme_footer'); ?>
+        
+        <!-- Javascripts -->
         <?php echo js_tag('script');?>
         
         <!-- Juxtapose resources -->
