@@ -1499,6 +1499,10 @@ body{
     padding-left: 0;
 }
 
+#tri_wrapper aside a img:hover{
+    box-shadow:0 0 6px #39AED0;
+}
+
 /* class for each of the three sections*/
 .sub_container { 
     width: 33.3%; 
@@ -1594,6 +1598,12 @@ body{
     height:20vw;
     width:100%;
 }
+
+/* MVH banner */
+#banner_wrap a img:hover{
+    box-shadow:0 0 10px #39AED0;
+}
+
 
 #front_banner_mobile{
     display:none;
