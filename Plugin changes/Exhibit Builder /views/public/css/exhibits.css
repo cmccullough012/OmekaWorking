@@ -112,3 +112,18 @@ exhibit-pages .current {
 .current-page{
     color:gray;
 }
+
+
+/*
+nav #exhibit-page{
+    float:right;
+    padding:1em;
+}
+
+nav #exhibit-page h4{
+    text-align:right;
+}
+
+.exhibits.show div[role=main]{
+    padding-top:0;
+}*/

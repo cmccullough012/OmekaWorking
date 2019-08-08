@@ -1,13 +1,16 @@
 <?php echo head(array('title' => metadata('exhibit', 'title'), 'bodyclass'=>'exhibits summary')); ?>
 
 <?php
-$pageTree = exhibit_builder_page_tree();
-if ($pageTree):
+//$pageTree = exhibit_builder_page_tree();
+//if ($pageTree):
 ?>
+
+
+<?php //endif; ?>
+
 <nav id="exhibit-pages">
-     <?php echo $pageTree; ?>
+     <?php echo exhibit_builder_page_tree($exhibit, $exhibit_page); ?>
 </nav>
-<?php endif; ?>
 
 <h1><?php echo metadata('exhibit', 'title'); ?></h1>
 <?php echo exhibit_builder_page_nav(); ?>

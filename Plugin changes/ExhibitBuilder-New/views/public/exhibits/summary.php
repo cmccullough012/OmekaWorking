@@ -2,6 +2,10 @@
 
 <h1><?php echo metadata('exhibit', 'title'); ?></h1>
 <?php echo exhibit_builder_page_nav(); ?>
+<nav id="exhibit-pages" style ="margin-bottom:1em;">
+     <?php echo exhibit_builder_page_tree($exhibit, $exhibit_page); ?>
+</nav>
+
 
 <div id="primary">
 <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
@@ -23,7 +27,7 @@ $pageTree = exhibit_builder_page_tree();
 if ($pageTree):
 ?>
 <nav id="exhibit-pages">
-    <?php echo $pageTree; ?>
+    <h4><strong>Explore:</strong> </h4><?php echo $pageTree; ?>
 </nav>
 <?php endif; ?>
 
