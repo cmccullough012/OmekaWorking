@@ -5,7 +5,11 @@ echo head(array(
 ?>
 
 
-<h1><span class="exhibit-page"><?php echo metadata('exhibit_page', 'title'); ?></span></h1>
+<h1 id ="exhibit-show"><span class="exhibit-page"><?php echo metadata('exhibit_page', 'title'); ?></span></h1>
+
+<nav id="exhibit-pages-show" style ="margin-bottom:1em;">
+     <?php echo exhibit_builder_page_tree($exhibit, $exhibit_page); ?>
+</nav>
 
 <div id="exhibit-blocks">
 <?php exhibit_builder_render_exhibit_page(); ?>

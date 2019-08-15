@@ -62,3 +62,15 @@
 .download-file * {
     vertical-align: top;
 }
+
+h1#exhibit-show{
+    width:40%;
+    float:left;
+}
+
+nav#exhibit-pages-show{
+    width:60%;
+    margin:2.5em 0 1em 0;
+    float:right;
+    text-align:right;
+}
